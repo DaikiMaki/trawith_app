@@ -1,4 +1,9 @@
 ja:
+  will_paginate:
+        previous_label: 前
+        next_label: 次
+        page_gap: …
+        
   activerecord:
     attributes:
       user:
@@ -6,3 +11,7 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード再入力
+        new_password: 新しいパスワード
+        new_password_confirmation: 新しいパスワード再入力
+      
+        
