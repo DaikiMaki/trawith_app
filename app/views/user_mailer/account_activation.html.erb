@@ -3,7 +3,7 @@
 <p>こんにちは <%= @user.name %>さん,</p>
 
 <p>
-  <%= @greeting %>
+  下記URLをタップしてアカウントを認証してください。
 </p>
 
 <%= link_to "認証する", edit_account_activation_url(@user.activation_token,

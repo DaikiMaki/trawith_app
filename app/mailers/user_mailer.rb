@@ -5,9 +5,8 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "アカウント認証"
   end
 
-  def password_reset
-    @greeting = "下記URLをタップしてアカウントを認証してください。"
-
-    mail to: "to@example.org"
+  def password_reset(user)
+    @user = user
+    mail to: user.email, subject: "パスワード再設定"
   end
 end
