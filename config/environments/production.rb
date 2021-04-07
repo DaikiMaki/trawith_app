@@ -125,5 +125,9 @@ Rails.application.configure do
     :domain         => host,
     :authentication => :plain,
   }
+  
+  # アップロードされたファイルをAWSに保存する
+  config.active_storage.service = :amazon
+
 
 end
