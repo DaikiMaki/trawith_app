@@ -20,8 +20,12 @@ end
 
 users = User.order(:created_at).take(6)
 50.times do
+  prefecture = Prefecture.where( 'id >= ?', rand(Prefecture.first.id..Prefecture.last.id) ).first
+  split = Split.where( 'id >= ?', rand(Split.first.id..Split.last.id) ).first
   content = Faker::Lorem.sentence(word_count: 5)
-  users.each { |user| user.microposts.create!(content: content) }
+  users.each { |user| user.microposts.create!(prefecture_id: prefecture.id, 
+                                              split_id: split.id, 
+                                              content: content) }
 end
 
 users = User.all

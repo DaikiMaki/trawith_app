@@ -5,8 +5,6 @@ class Micropost < ApplicationRecord
   has_one_attached :image
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
-  validates :prefecture_id, presence: true
-  validates :split_id, presence: true
   validates :content, presence: true,  length: { maximum: 140 }
   validates :image,   content_type: { in: %w[image/jpeg image/gif image/png],
                                       message: "は有効な画像形式である必要があります" },
