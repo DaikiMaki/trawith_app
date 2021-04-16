@@ -4,7 +4,11 @@ class MicropostTest < ActiveSupport::TestCase
   
   def setup
     @user = users(:michael)
-    @micropost = @user.microposts.build(content: "Lorem ipsum")
+    @prefecture = Prefecture.first
+    @split = Split.first
+    @micropost = @user.microposts.build(prefecture_id: @prefecture.id,
+                                        split_id: @split.id,
+                                        content: "テスト")
   end
   
   test "should be valid" do
@@ -15,6 +19,17 @@ class MicropostTest < ActiveSupport::TestCase
     @micropost.user_id = nil
     assert_not @micropost.valid?
   end
+  
+  test "prefecture id should be present" do
+    @micropost.prefecture_id = nil
+    assert_not @micropost.valid?
+  end
+  
+  test "split id should be present" do
+    @micropost.split_id = nil
+    assert_not @micropost.valid?
+  end
+  
   
   test "content should be present" do
     @micropost.content = " "

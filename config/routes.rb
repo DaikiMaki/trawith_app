@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get '/login', to:'sessions#new'
   post '/login', to:'sessions#create'
   delete '/logout', to:'sessions#destroy'
+  get '/micropost_search', to:'microposts#search'
+  get '/user_search', to:'users#search'
+
   
   resources :users do
     member do

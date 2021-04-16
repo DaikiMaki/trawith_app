@@ -1,8 +1,9 @@
 class MicropostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy, :search]
   before_action :correct_user, only: :destroy
   
   def create
+    @search = Micropost.ransack(params[:q])
     @micropost = current_user.microposts.build(micropost_params)
     @micropost.image.attach(params[:micropost][:image])
     if @micropost.save
@@ -20,10 +21,18 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
   
+  def search
+    @micropost = Micropost.new
+    @search = Micropost.ransack(params[:q])
+    @search_microposts = @search.result.page(params[:page])
+  end
+  
+  
+  
   private
   
   def micropost_params
-    params.require(:micropost).permit(:content, :image)
+    params.require(:micropost).permit(:content, :prefecture_id,  :split_id, :image)
   end
   
   def correct_user

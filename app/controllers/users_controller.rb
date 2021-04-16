@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   
   def index
     @users = User.paginate(page: params[:page])
+    @search = User.ransack(params[:q])
   end
   
   def show
@@ -49,6 +50,11 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
   
+  def search
+    @search = User.ransack(params[:q])
+    @search_users = @search.result.page(params[:page])
+  end
+  
   def following
     @title = "Following"
     @user  = User.find(params[:id])
@@ -63,7 +69,6 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
-  
   private
   
     def user_params

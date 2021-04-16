@@ -5,6 +5,8 @@ class UserTest < ActiveSupport::TestCase
   def setup
     @user = User.new(name: "Example User", email: "user@example.com",
                      password: "foobar", password_confirmation: "foobar")
+    @prefecture = Prefecture.first
+    @split = Split.first
   end
  
  test "should be valid" do
@@ -71,7 +73,9 @@ class UserTest < ActiveSupport::TestCase
   
   test "associated microposts should be destroyed" do
     @user.save
-    @user.microposts.create!(content: "Lorem ipsum")
+    @user.microposts.create!(content: "Lorem ipsum", 
+                             prefecture_id: @prefecture.id, 
+                             split_id: @split.id)
     assert_difference "Micropost.count", -1 do
       @user.destroy
     end
@@ -87,21 +91,5 @@ class UserTest < ActiveSupport::TestCase
     michael.unfollow(archer)
     assert_not michael.following?(archer)
   end
-  
-  test "feed should have the right posts" do
-    michael = users(:michael)
-    archer  = users(:archer)
-    lana    = users(:lana)
-    lana.microposts.each do |post_following|
-      assert michael.feed.include?(post_following)
-    end
-    michael.microposts.each do |post_self|
-      assert michael.feed.include?(post_self)
-    end
-    archer.microposts.each do |post_unfollowed|
-      assert_not michael.feed.include?(post_unfollowed)
-    end
-  end
-
   
 end

@@ -1,7 +1,12 @@
 <%= form_with(model: @micropost, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "入力..." %>
+    
+    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '場所を選択' %>
+    <%= f.collection_select :split_id, Split.all, :id, :name, include_blank: '部位を選択' %>
+
+
+    <%= f.text_area :content, placeholder: "より詳細な情報を入力..." %>
   </div>
   <%= f.submit "投稿する", class: "btn btn-primary" %>
   <span class="image">

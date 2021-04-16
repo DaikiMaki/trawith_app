@@ -1,0 +1,7 @@
+<% if @search_microposts.any? %>
+  <ol class="microposts">
+    <%= render @search_microposts %>
+  </ol>
+  <%= will_paginate @search_microposts, 
+            params: { controller: :microposts, action: :search }%>
+<% end %>
