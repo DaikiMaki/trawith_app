@@ -2,6 +2,7 @@ class Micropost < ApplicationRecord
   belongs_to :user
   belongs_to :prefecture
   belongs_to :split
+  belongs_to :user
   has_one_attached :image
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true

@@ -12,4 +12,22 @@
     </strong>
     フォロワー
   </a>
+  <a>
+    <%= render 'users/follow_form' if logged_in? %>
+  </a>
+  <% unless @user.id == current_user.id %>
+    <% if @haveRoom == true %>
+      <a href="<%=  room_path(@roomId) %>">
+        <i class="far fa-envelope fa-2x"></i>
+      </a>     
+    <% else %>
+      <%= form_with(model: @room, local: true) do |f| %>
+        <%= fields_for @entry do |e| %>
+          <%= e.hidden_field :user_id, value: @user.id %>
+        <% end %>
+        <%= f.submit "トークを始める", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
+

@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :messages, dependent: :destroy
+  has_many :entries,  dependent: :destroy
+  has_many :rooms,    dependent: :destroy, through: :entries
   has_many :microposts, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
@@ -12,6 +15,7 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_create :create_activation_digest
   validates :name,  presence: true, length: { maximum: 50 }
+  validates :introduction, length: { maximum: 140 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },

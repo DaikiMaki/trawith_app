@@ -156,6 +156,7 @@ aside {
   padding: 0;
   a {
     float: left;
+    text-align: center;
     padding: 0 10px;
     border-left: 1px solid $gray-lighter;
     color: gray;
@@ -186,6 +187,10 @@ aside {
 
 .users.follow {
   padding: 0;
+}
+
+.introduction {
+  margin-left: 90px;
 }
 
 /* forms */
@@ -223,6 +228,9 @@ input {
     margin-left: 20px;
     font-weight: normal;
   }
+}
+i {
+  background: none;
 }
 
 #session_remember_me {
@@ -289,4 +297,115 @@ span.image {
   }
 }
 
+
+/* Rooms index */
+
+.rooms {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .message {
+    display: block;
+    margin-left: 60px;
+    a {
+      color: black;
+      opacity: 0.6;
+    }
+    a:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+
+.fukidasi {
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.fukidasi .icon {
+  float: left;
+  margin-right: -50px;
+  width: 40px;
+}
+
+.fukidasi .icon img{
+  width: 90%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.fukidasi .messaging {
+  width: 100%;
+  text-align: left;
+}
+
+.says {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 50px;
+  padding: 10px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #edf1ee;
+}
+
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #edf1ee;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+.says p {
+  margin: 0;
+  padding: 0;
+}
+.mymessage {
+  margin: 10px 0;
+  text-align: right;
+}
+.mymessage p {
+  display: inline-block;
+  position: relative;
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px;
+}
+.mymessage p:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
 

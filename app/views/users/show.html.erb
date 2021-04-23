@@ -3,16 +3,24 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
+        <div>
+          <%= gravatar_for @user %>
+          <%= @user.name %>
+        </div>
       </h1>
+      <h5>
+        <% if @user.introduction? %>
+          <div class="introduction">
+            <%= @user.introduction %>
+          </div>
+        <% end %>
+      </h5>
     </section>
     <section class="stats">
       <%= render 'shared/stats' %>
     </section>
   </aside>
   <div class="col-md-8">
-    <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
       <h3>投稿数(<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
