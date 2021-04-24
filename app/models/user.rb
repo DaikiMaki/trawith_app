@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :inquiry,  dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :entries,  dependent: :destroy
   has_many :rooms,    dependent: :destroy, through: :entries

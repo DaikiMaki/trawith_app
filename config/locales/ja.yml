@@ -19,5 +19,7 @@ ja:
         split: 部位
         content: 投稿
         image: 画像
+      inquiry: 
+        message: お問い合わせ内容
       
         

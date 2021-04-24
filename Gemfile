@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',      '6.0.3'
+gem 'dotenv-rails'
 gem 'ransack'
 gem 'seed-fu'
 gem 'aws-sdk-s3',              '1.46.0', require: false

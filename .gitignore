@@ -43,3 +43,5 @@ yarn-debug.log*
 
 !/tmp/pid/.keep
 !/tmp/sockets/.keep
+
+/.env
