@@ -33,8 +33,6 @@ Rails.application.configure do
 
   host = '9e398d6821364f0393bd7e4504053c51.vfs.cloud9.us-east-2.amazonaws.com'     # クラウドIDE
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
-
-
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp

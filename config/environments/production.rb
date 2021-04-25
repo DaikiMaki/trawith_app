@@ -109,14 +109,15 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  
+
   #本番環境でデータ漏洩を防ぐためにSSLを使う
   config.force_ssl = true
   
+  host = 'cherry-crisp-98435.herokuapp.com'  
+  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'cherry-crisp-98435.herokuapp.com'
-  config.action_mailer.default_url_options = { host: host }
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     domain: 'gmail.com',
@@ -126,7 +127,6 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true
   }
-  
   
   
   # アップロードされたファイルをAWSに保存する
