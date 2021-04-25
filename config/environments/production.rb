@@ -113,7 +113,6 @@ Rails.application.configure do
   #本番環境でデータ漏洩を防ぐためにSSLを使う
   config.force_ssl = true
   
-  config.action_mailer.perform_caching = false
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   host = 'cherry-crisp-98435.herokuapp.com'
