@@ -12,7 +12,7 @@
     </strong>
     フォロワー
   </a>
-  <a>
+  <a id="follow_form">
     <%= render 'users/follow_form' if logged_in? %>
   </a>
   <% unless @user.id == current_user.id %>

@@ -397,6 +397,7 @@ span.image {
   border-radius: 12px;
   background: #30e852;
   font-size: 15px;
+  text-align: left;
 }
 .mymessage p:after {
   content: "";
@@ -409,3 +410,11 @@ span.image {
   transform: rotate(-35deg);
 }
 
+#message {
+  width: 80%;
+}
+
+#message-button {
+  width: 20%;
+  float: right;
+}

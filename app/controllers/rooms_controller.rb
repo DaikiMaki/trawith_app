@@ -11,10 +11,26 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.create
-    @joinCurrentUser = Entry.create(user_id: current_user.id, room_id: @room.id)
-    @joinUser = Entry.create(join_room_params)
-    redirect_to room_path(@room.id)
+    @user = User.find(params[:entry][:user_id])
+    @currentUserEntry = Entry.where(user_id: current_user.id)
+    @userEntry = Entry.where(user_id: @user.id)
+    unless @user.id == current_user.id
+      @currentUserEntry.each do |cu|
+        @userEntry.each do |u|
+          if cu.room_id == u.room_id
+            @haveRoom = true
+            @roomId = cu.room_id
+            redirect_to room_path(@roomId)
+          end
+        end
+      end
+    end
+    unless @haveRoom
+      @room = Room.create
+      @joinCurrentUser = Entry.create(user_id: current_user.id, room_id: @room.id)
+      @joinUser = Entry.create(join_room_params)
+      redirect_to room_path(@room.id)
+    end
   end
 
   def show

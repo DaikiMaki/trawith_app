@@ -8,8 +8,6 @@ class MessagesController < ApplicationController
         @message = Message.new
         gets_entries_all_messages
       end
-    else
-      flash[:alert] = "メッセージの送信に失敗しました"
     end
   end
   
