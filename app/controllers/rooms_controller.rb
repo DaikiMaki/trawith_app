@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
     current_entries.each do |entry|
       my_room_ids << entry.room.id
     end
-    @another_entries = Entry.where(room_id: my_room_ids).where.not(user_id: current_user.id)
+    @another_entries = Entry.where(room_id: my_room_ids).where.not(user_id: current_user.id).order(created_at: :desc)
   end
 
   def create

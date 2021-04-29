@@ -1,31 +1,38 @@
-<% if @messages.present? %>
-  <% @messages.each do |m| %>
-    <% if m.user_id == current_user.id %>
-      <div class="mymessage">
-        <p><%=safe_join(m.message.split("\n"),tag(:br))%></p>
-      </div>
-    <% else %>
-      <div class="fukidasi">
-        <div class="icon">
-          <%= link_to gravatar_for(m.user, size: 50), user_path(m.user) %>
-        </div>
-        <div class="messaging">
-          <div class="says">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="room">
+      <% if @messages.present? %>
+        <% @messages.each do |m| %>
+          <% if m.user_id == current_user.id %>
+          <div class="mymessage">
             <p><%=safe_join(m.message.split("\n"),tag(:br))%></p>
           </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-<% else %>
-  <h3 class="text-center">メッセージはまだありません</h3>
-<% end %>
+          <% else %>
+          <div class="fukidasi">
+            <div class="icon">
+              <%= link_to gravatar_for(m.user, size: 50), user_path(m.user) %>
+            </div>
+            <div class="messaging">
+              <div class="says">
+                <p><%=safe_join(m.message.split("\n"),tag(:br))%></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>  
+      <% else %>
+        <h3 class="text-center">メッセージはまだありません</h3>
+      <% end %>
 
-<%= form_with(model: @message) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <%= f.text_area :message, placeholder: "メッセージを入力...", id: "message" %>
-  <%= f.hidden_field :room_id, :value => @room.id %>
-  <br>
-  <%= f.submit "投稿する" %>
-<% end %>
+      <%= form_with(model: @message) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <%= f.text_area :message, placeholder: "メッセージを入力...", id: "message" %>
+        <%= f.hidden_field :room_id, :value => @room.id %>
+        <br>
+        <%= f.submit "投稿する" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 

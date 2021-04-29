@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.paginate(page: params[:page]).order(created_at: :desc).where.not(admin: 1)
     @search = User.ransack(params[:q])
   end
   
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     flash[:success] = "アカウントを削除しました"
-    redirect_to root_url
+    redirect_to users_path
   end
   
   def search
