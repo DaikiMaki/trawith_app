@@ -143,6 +143,7 @@ aside {
 
 .gravatar {
   float: left;
+  border-radius: 50px;
   margin-right: 10pz¥x;
 }
 
@@ -335,6 +336,7 @@ span.image {
   }
 }
 
+/* Rooms show */
 
 .fukidasi {
   width: 100%;
@@ -418,3 +420,36 @@ span.image {
   width: 20%;
   float: right;
 }
+
+.room {
+  overflow-x: scroll;
+  height: 500px;
+  width: 100%;
+  border: 1px solid #dee2e6;
+}
+
+.room-border {
+  border: 1px solid #dee2e6;
+}
+
+.message-form {
+  margin-top: 15px;
+}
+
+.room-icon {
+  border: 1px solid #dee2e6;
+  height: 70px;
+  color: white;
+  background-color: #222;
+  text-align: center;
+}
+
+.icon {
+  line-height: 70px;
+  img {
+    position: absolute;
+    top: 10px;
+    left: 45%;
+  }
+}
+
