@@ -15,7 +15,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
   
   test "should get contact" do
-    get contact_path
+    get new_inquiry_path
     assert_response :success
     assert_select "title", "Contact | Trawith App"
   end

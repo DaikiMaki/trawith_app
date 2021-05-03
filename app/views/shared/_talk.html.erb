@@ -33,14 +33,10 @@
         <h3 class="text-center">メッセージはまだありません</h3>
       <% end %>
     </div>
-    <div class="message-form">
-      <%= form_with(model: @message) do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
-        <%= f.text_area :message, placeholder: "メッセージを入力...", id: "message", class: "rounded-pill" %>
-        <%= f.hidden_field :room_id, :value => @room.id %>
-        <br>
-        <%= f.submit "投稿する", class: "btn btn-primary" %>
-      <% end %>
+    <form>
+      <textarea data-behavior="room_speaker" data-chat_room_id="<%= @room.id %>" placeholder="メッセージを入力" class="room__message-form_textarea"></textarea>
+      <button class="btn btn-primary submit-button">submit</button>
+    </form>
     </div>
   </div>
 </div>
