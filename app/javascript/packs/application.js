@@ -5,5 +5,4 @@ require("channels")
 require("jquery")
 require('../channels/room_channel')
 
-
 import "bootstrap"

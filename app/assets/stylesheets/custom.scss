@@ -439,12 +439,10 @@ span.image {
 .room-icon {
   border: 1px solid #dee2e6;
   height: 70px;
-  color: white;
-  background-color: #222;
   text-align: center;
 }
 
-.icon {
+.room-icon .icon {
   line-height: 70px;
   img {
     position: absolute;

@@ -4,7 +4,7 @@
       <div class="icon">
         <% @entries.each do |e| %>
           <% unless e.user == current_user %>
-            <%= link_to gravatar_for(e.user, size: 50), user_path(e.user) %>
+          <button id="page-top"><%= gravatar_for(e.user, size: 50) %></button>
           <% end %>
         <% end %>
       </div>
@@ -23,5 +23,13 @@
     </div>
   </div>
 </div>
+
+<script>
+  const room = document.getElementById('room');
+  room.scrollTop = room.scrollHeight;
+  $('#page-top').on('click', function () {
+    $('#room').scrollTop(0);
+  });
+</script>
 
 
