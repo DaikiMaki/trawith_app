@@ -10,12 +10,16 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
-    return alert(data['message']);
+    console.log(data['message']);
+    const Messages = document.getElementById('room');
+    Messages.insertAdjacentHTML('beforeend', data['message']);
+    const obj = document.getElementById("room");
+    obj.scrollTop = obj.scrollHeight;
   },
 
-  speak: function(message) {
-    console.log('test')
-    return this.perform('speak', {message: message});
+  speak: function(message, user_id, room_id) {
+    console.log('speakは発火しているよ！');
+    return this.perform('speak', {message: message, user_id: user_id, room_id: room_id});
   }
 });
 
@@ -24,8 +28,11 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
 // if(/rooms/.test(location.pathname)) {
   $(document).on('click', ".submit-button", function(e) {
     // if (e.key === "Enter") {
-      appRoom.speak(e.target.value);
-      e.target.value = '';
+      const message_form = document.getElementById("message_form");
+      const user_id = $('textarea').data('user_id');
+      const room_id = $('textarea').data('room_id');
+      appRoom.speak(message_form.value, user_id, room_id);
+      message_form.value = '';
       e.preventDefault();
     // }
   });

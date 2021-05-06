@@ -9,32 +9,15 @@
         <% end %>
       </div>
     </div>
-    <div class="room">
+    <div id="room">
       <% if @messages.present? %>
-        <% @messages.each do |m| %>
-          <% if m.user_id == current_user.id %>
-          <div class="mymessage">
-            <p><%=safe_join(m.message.split("\n"),tag(:br))%></p>
-          </div>
-          <% else %>
-          <div class="fukidasi">
-            <div class="icon">
-              <%= link_to gravatar_for(m.user, size: 50), user_path(m.user) %>
-            </div>
-            <div class="messaging">
-              <div class="says">
-                <p><%=safe_join(m.message.split("\n"),tag(:br))%></p>
-              </div>
-            </div>
-          </div>
-          <% end %>
-        <% end %>  
+        <%= render @messages %>
       <% else %>
-        <h3 class="text-center">メッセージはまだありません</h3>
+        <h3>メッセージはまだありません</h3>
       <% end %>
     </div>
     <form>
-      <textarea data-behavior="room_speaker" data-chat_room_id="<%= @room.id %>" placeholder="メッセージを入力" class="room__message-form_textarea"></textarea>
+      <textarea data-behavior="room_speaker" data-user_id="<%= current_user.id %>" data-room_id="<%= @room.id %>" placeholder="メッセージを入力" class="room__message-form_textarea", id="message_form"></textarea>
       <button class="btn btn-primary submit-button">submit</button>
     </form>
     </div>
