@@ -18,18 +18,20 @@
     </div>
     <form>
       <textarea data-behavior="room_speaker" data-user_id="<%= current_user.id %>" data-room_id="<%= @room.id %>" placeholder="メッセージを入力" class="room__message-form_textarea", id="message_form"></textarea>
-      <button class="btn btn-primary submit-button">submit</button>
+      <button class="btn btn-primary submit-button">送信</button>
     </form>
     </div>
   </div>
 </div>
 
 <script>
+$(document).on ("turbolinks:load", function (){
   const room = document.getElementById('room');
   room.scrollTop = room.scrollHeight;
   $('#page-top').on('click', function () {
     $('#room').scrollTop(0);
   });
+});
 </script>
 
 

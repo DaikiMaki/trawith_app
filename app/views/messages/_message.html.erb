@@ -1,5 +1,6 @@
 <% if message.user == current_user %>
   <div class="mymessage">
+    <span><%= message.created_at.strftime("%m-%d %H:%M") %></span>
     <p><%=safe_join(message.message.split("\n"),tag(:br))%></p>
   </div>
   <% else %>
@@ -11,6 +12,7 @@
       <div class="says">
         <p><%=safe_join(message.message.split("\n"),tag(:br))%></p>
       </div>
+      <span><%= message.created_at.strftime("%m-%d %H:%M") %></span>
     </div>
   </div>
 <% end %>

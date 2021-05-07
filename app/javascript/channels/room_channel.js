@@ -10,7 +10,6 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
-    console.log(data['message']);
     const Messages = document.getElementById('room');
     Messages.insertAdjacentHTML('beforeend', data['message']);
     const obj = document.getElementById("room");
@@ -18,23 +17,19 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
   },
 
   speak: function(message, user_id, room_id) {
-    console.log('speakは発火しているよ！');
     return this.perform('speak', {message: message, user_id: user_id, room_id: room_id});
   }
 });
 
 /* global $ */
 
-// if(/rooms/.test(location.pathname)) {
-  $(document).on('click', ".submit-button", function(e) {
-    // if (e.key === "Enter") {
-      const message_form = document.getElementById("message_form");
-      const user_id = $('textarea').data('user_id');
-      const room_id = $('textarea').data('room_id');
-      appRoom.speak(message_form.value, user_id, room_id);
-      message_form.value = '';
-      e.preventDefault();
-    // }
-  });
-// }
+$(document).on('click', ".submit-button", function(e) {
+  const message_form = document.getElementById("message_form");
+  const user_id = $('textarea').data('user_id');
+  const room_id = $('textarea').data('room_id');
+  appRoom.speak(message_form.value, user_id, room_id);
+  message_form.value = '';
+  e.preventDefault();
+});
+
 

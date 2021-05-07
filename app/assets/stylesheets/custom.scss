@@ -86,6 +86,7 @@ footer {
   color: $gray-light;
   a {
     color: $gray;
+    margin-right: 50px;
     &:hover {
       color: $gray-darker;
     }
@@ -337,6 +338,9 @@ span.image {
 }
 
 /* Rooms show */
+.fukidasi span {
+  color: #9d9d9d;
+}
 
 .fukidasi {
   width: 100%;
@@ -382,14 +386,21 @@ span.image {
   -webkit-transform: rotate(35deg);
   transform: rotate(35deg);
 }
+
 .says p {
   margin: 0;
   padding: 0;
 }
+
 .mymessage {
   margin: 10px 0;
   text-align: right;
 }
+
+.mymessage span {
+  color: #9d9d9d;
+}
+
 .mymessage p {
   display: inline-block;
   position: relative;
@@ -412,13 +423,11 @@ span.image {
   transform: rotate(-35deg);
 }
 
-#message {
-  width: 100%;
-}
-
-#message-button {
-  width: 20%;
-  float: right;
+.submit-button {
+  position: absolute;
+  right: 15px;
+  line-height: 32px;
+  width: 15%;
 }
 
 #room {
@@ -432,8 +441,12 @@ span.image {
   border: 1px solid #dee2e6;
 }
 
-.message-form {
-  margin-top: 15px;
+#message_form {
+  border: 1px solid #bbb;
+  width: 85%;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  
 }
 
 .room-icon {
