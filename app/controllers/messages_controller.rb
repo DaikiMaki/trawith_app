@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   def create
     if Entry.where(user_id: current_user.id, room_id: @room.id)
       @message = Message.create(message_params)
+      ActionCable.server.broadcast 'room_channel', message: @message.template
       if @message.save
         @message = Message.new
         gets_entries_all_messages

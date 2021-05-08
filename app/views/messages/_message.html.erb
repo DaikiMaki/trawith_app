@@ -1,18 +1,12 @@
-<% if message.user == current_user %>
-  <div class="mymessage">
-    <span><%= message.created_at.strftime("%m-%d %H:%M") %></span>
-    <p><%=safe_join(message.message.split("\n"),tag(:br))%></p>
+<div class="fukidasi">
+  <div class="icon">
+    <%= link_to gravatar_for(message.user, size: 50), user_path(message.user) %>
   </div>
-  <% else %>
-  <div class="fukidasi">
-    <div class="icon">
-      <%= link_to gravatar_for(message.user, size: 50), user_path(message.user) %>
-    </div>
-    <div class="messaging">
-      <div class="says">
-        <p><%=safe_join(message.message.split("\n"),tag(:br))%></p>
-      </div>
-      <span><%= message.created_at.strftime("%m-%d %H:%M") %></span>
+  <div class="messaging">
+    <p><%= message.user.name %><span><%= message.created_at.strftime("%m-%d %H:%M") %></span></p>
+    <div class="says">
+      <p><%=safe_join(message.message.split("\n"),tag(:br))%></p>
     </div>
   </div>
-<% end %>
+</div>
+

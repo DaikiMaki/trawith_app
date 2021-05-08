@@ -144,7 +144,7 @@ aside {
 
 .gravatar {
   float: left;
-  border-radius: 50px;
+  border-radius: 10px;
   margin-right: 10pz¥x;
 }
 
@@ -340,12 +340,14 @@ span.image {
 /* Rooms show */
 .fukidasi span {
   color: #9d9d9d;
+  padding-left: 5px;
+  font-weight: normal;
 }
 
 .fukidasi {
   width: 100%;
-  margin: 10px 0;
   overflow: hidden;
+  padding: 10px 10px 10px 5px;
 }
 
 .fukidasi .icon {
@@ -357,39 +359,30 @@ span.image {
 .fukidasi .icon img{
   width: 90%;
   height: auto;
-  border-radius: 50%;
+  border-radius: 10px;
 }
 
 .fukidasi .messaging {
   width: 100%;
   text-align: left;
+  font-size: 13px;
+}
+
+.messaging p {
+  margin-left: 45px;
+  margin-top: -5px;
+  font-weight: bold;
 }
 
 .says {
-  display: inline-block;
-  position: relative;
-  margin: 0 0 0 50px;
-  padding: 10px;
-  max-width: 200px;
-  border-radius: 12px;
-  background: #edf1ee;
-}
-
-.says:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 3px;
-  left: -19px;
-  border: 8px solid transparent;
-  border-right: 18px solid #edf1ee;
-  -webkit-transform: rotate(35deg);
-  transform: rotate(35deg);
+  margin-left: 45px;
+  margin-top: -10px;
 }
 
 .says p {
   margin: 0;
   padding: 0;
+  font-weight: normal;
 }
 
 .mymessage {
@@ -435,6 +428,11 @@ span.image {
   height: 500px;
   width: 100%;
   border: 1px solid #dee2e6;
+}
+
+#first_comment {
+  text-align: center;
+  line-height: 450px;
 }
 
 .room-border {

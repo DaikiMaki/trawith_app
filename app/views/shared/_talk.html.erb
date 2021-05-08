@@ -13,13 +13,15 @@
       <% if @messages.present? %>
         <%= render @messages %>
       <% else %>
-        <h3>メッセージはまだありません</h3>
+        <h3 id="first_comment">メッセージはまだありません</h3>
       <% end %>
     </div>
-    <form>
-      <textarea data-behavior="room_speaker" data-user_id="<%= current_user.id %>" data-room_id="<%= @room.id %>" placeholder="メッセージを入力" class="room__message-form_textarea", id="message_form"></textarea>
-      <button class="btn btn-primary submit-button">送信</button>
-    </form>
+    <div id="message">
+      <%= form_with model: @message do |f| %>
+        <%= f.text_area :message, placeholder: "入力...", id: "message_form" %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+        <%= f.submit "送信", class: "btn submit-button" %>
+      <% end %>
     </div>
   </div>
 </div>

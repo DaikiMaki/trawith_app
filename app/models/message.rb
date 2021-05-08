@@ -3,5 +3,7 @@ class Message < ApplicationRecord
   belongs_to :room
   validates :message, presence: true, length: { maximum: 140 }
   
-  after_create_commit { MessageBroadcastJob.perform_later self }
+  def template
+    ApplicationController.renderer.render partial: "messages/message", locals: { message: self }
+  end
 end
