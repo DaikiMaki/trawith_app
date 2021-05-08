@@ -127,7 +127,6 @@ Rails.application.configure do
   }
   
   
-  # アップロードされたファイルをAWSに保存する
   config.active_storage.service = :amazon
   config.action_cable.allowed_request_origins = [ /http:\/\/.*/ ]
 
