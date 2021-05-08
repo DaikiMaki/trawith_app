@@ -23,8 +23,10 @@ document.addEventListener('turbolinks:load', () => {
 
     received(data) {
       message_form.value = '';
+      if (first_comment != null) {
+        first_comment.remove();
+      }
       room.insertAdjacentHTML('beforeend', data['message']);
-      first_comment.remove();
       room.scrollTop = room.scrollHeight;
     }
   });
