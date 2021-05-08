@@ -127,7 +127,6 @@ Rails.application.configure do
   }
   
   
-  # アップロードされたファイルをAWSに保存する
   config.active_storage.service = :amazon
   ActionCable.server.config.disable_request_forgery_protection = true
 
