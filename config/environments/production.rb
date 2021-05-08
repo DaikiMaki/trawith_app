@@ -128,6 +128,6 @@ Rails.application.configure do
   
   
   config.active_storage.service = :amazon
-  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.allowed_request_origins = [ /http:\/\/.*/ ]
 
 end
