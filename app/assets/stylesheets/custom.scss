@@ -350,6 +350,10 @@ span.image {
   padding: 10px 10px 10px 5px;
 }
 
+.fukidasi:hover {
+  background-color: #F2F2F2;
+}
+
 .fukidasi .icon {
   float: left;
   margin-right: -50px;
@@ -385,37 +389,6 @@ span.image {
   font-weight: normal;
 }
 
-.mymessage {
-  margin: 10px 0;
-  text-align: right;
-}
-
-.mymessage span {
-  color: #9d9d9d;
-}
-
-.mymessage p {
-  display: inline-block;
-  position: relative;
-  margin: 0 10px 0 0;
-  padding: 8px;
-  max-width: 200px;
-  border-radius: 12px;
-  background: #30e852;
-  font-size: 15px;
-  text-align: left;
-}
-.mymessage p:after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  right: -19px;
-  border: 8px solid transparent;
-  border-left: 18px solid #30e852;
-  -webkit-transform: rotate(-35deg);
-  transform: rotate(-35deg);
-}
-
 .submit-button {
   position: absolute;
   right: 15px;
@@ -441,10 +414,11 @@ span.image {
 
 #message_form {
   border: 1px solid #bbb;
-  width: 85%;
+  width: 84%;
   margin-bottom: 15px;
   box-sizing: border-box;
-  
+  resize: none;
+  overflow: hidden;
 }
 
 .room-icon {
@@ -462,3 +436,6 @@ span.image {
   }
 }
 
+nav.pagination {
+  display: none;
+}

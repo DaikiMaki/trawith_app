@@ -12,15 +12,16 @@
     <div id="room">
       <% if @messages.present? %>
         <%= render @messages %>
+        <%= paginate @messages %>
       <% else %>
         <h3 id="first_comment">メッセージはまだありません</h3>
       <% end %>
     </div>
     <div id="message">
       <%= form_with model: @message do |f| %>
-        <%= f.text_area :message, placeholder: "入力...", id: "message_form" %>
+        <%= f.text_area :message, placeholder: "入力...", id: "message_form", maxlength: "140" %>
         <%= f.hidden_field :room_id, value: @room.id %>
-        <%= f.submit "送信", class: "btn submit-button" %>
+        <%= f.submit "送信", class: "btn btn-primary submit-button disabled", id: "message_button" %>
       <% end %>
     </div>
   </div>
@@ -29,11 +30,18 @@
 <script>
 $(document).on ("turbolinks:load", function (){
   const room = document.getElementById('room');
-  room.scrollTop = room.scrollHeight;
   $('#page-top').on('click', function () {
     $('#room').scrollTop(0);
   });
 });
+
+$(function() {
+  $('#room').jscroll({
+    contentSelector: '.fukidasi',
+    nextSelector: 'span.next:last a'
+  });
+});
+
 </script>
 
 
