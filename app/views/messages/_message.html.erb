@@ -6,6 +6,7 @@
     <p><%= message.user.name %><span><%= message.created_at.strftime("%m-%d %H:%M") %></span></p>
     <div class="says">
       <p><%=safe_join(message.message.split("\n"),tag(:br))%></p>
+      <%= image_tag message.image.variant(resize_to_limit: [500, 500]) if message.image.attached? %>
     </div>
   </div>
 </div>

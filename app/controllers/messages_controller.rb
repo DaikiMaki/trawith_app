@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   def create
     if Entry.where(user_id: current_user.id, room_id: @room.id)
       @message = Message.create(message_params)
+      @message.image.attach(params[:message][:image])
       ActionCable.server.broadcast 'room_channel', message: @message.template
       if @message.save
         @message = Message.new
@@ -24,6 +25,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:user_id, :message, :room_id).merge(user_id: current_user.id)
+    params.require(:message).permit(:user_id, :message, :room_id, :image).merge(user_id: current_user.id)
   end
 end
