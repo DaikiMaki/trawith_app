@@ -20,7 +20,12 @@
       <%= f.submit "検索", class: "btn btn-primary" %>
       <% end %>
       <h3>投稿一覧</h3>
-      <%= render 'shared/search' %>
+      <div class="feed-pc">
+        <%= render 'shared/search' %>
+      </div>
+      <div class="feed-sp">
+        <%= render 'shared/search' %>
+      </div>
     </div>
   </div>
 <% else %>
@@ -31,3 +36,16 @@
   <%= link_to "登録する", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
 <% end %>
+ 
+<script>
+  
+  /* global $*/
+  
+  $(function() {
+    $('.feed-sp').jscroll({
+      contentSelector: '.feed-sp',
+      nextSelector: 'li.next:last a'
+    });
+  });
+  
+</script>

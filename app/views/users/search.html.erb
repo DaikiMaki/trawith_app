@@ -8,9 +8,30 @@
 <h1>ユーザー一覧</h1>
 
 <% if @search_users.any? %>
+<div class="users-pc">
   <ol class="users">
     <%= render @search_users %>
   </ol>
-  <%= will_paginate @search_users,
-            params: { controller: :users, action: :search }%>
+  <%= paginate @search_users,
+                params: { controller: :users, action: :search }%>
+</div>
+<div class="users-sp">
+  <ol class="users">
+    <%= render @search_users %>
+  </ol>
+  <%= paginate @search_users,
+                params: { controller: :users, action: :search }%>
+</div>
+
 <% end %>
+
+<script>
+  
+  $(function() {
+  $('.users-sp').jscroll({
+    contentSelector: '.users-sp',
+    nextSelector: 'span.next:last a'
+    });
+  });
+
+</script>

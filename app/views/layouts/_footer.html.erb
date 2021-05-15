@@ -1,7 +1,36 @@
-<footer>
+<footer class="footer-pc">
   <nav>
     <ul>
       <li><%= link_to "お問い合わせ", new_inquiry_path %></li>
     </ul>
   </nav>
 </footer>
+
+<% if logged_in? %>
+  <footer class="footer-sp" style="display: none">
+    <nav>
+      <ul>
+        <li>
+          <%= link_to root_path do %>
+            <i class="fas fa-home fa-5x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to rooms_path do %>
+            <i class="far fa-envelope fa-5x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to users_path do %>
+            <i class="fas fa-users fa-5x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to edit_user_path(current_user) do %>
+            <i class="fas fa-cog fa-5x"></i>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+<% end %>

@@ -1,6 +1,7 @@
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-4">
+    <aside class="col-md-3" style="position: fixed;">
+      <p class="close new-close" style="display: none;"><i class="fas fa-times fa-7x"></i></p>
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
@@ -11,8 +12,9 @@
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
-    <div class="col-md-8">
+    <div class="col-md-8 post" style="float: right;">
       <%= search_form_for @search, url: micropost_search_path do |f| %>
+      <p class="close search-close" style="display: none;"><i class="fas fa-times fa-5x"></i></p>
       <div class="searchbox">
         <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, include_blank: '場所で検索' %>
         <%= f.collection_select :split_id_eq, Split.all, :id, :name, include_blank: '部位で検索' %>
@@ -20,14 +22,82 @@
       <%= f.submit "検索", class: "btn btn-primary" %>
       <% end %>
       <h3>投稿一覧</h3>
-      <%= render 'shared/feed' %>
+      <button class="feed-following-button">フォロー中</button>
+      <div class="feed-pc">
+        <%= render 'shared/feed' %>
+      </div>
+      <div class="feed-sp">
+        <%= render 'shared/feed' %>
+      </div>
+      <button class="search-button" style="display: none;"><i class="fas fa-search fa-7x"></i></button>
+      <button class="new-button" style="display: none;"><i class="fas fa-plus-circle fa-7x"></i></button>
     </div>
   </div>
+  <script>
+
+  /* global $ */
+
+  $('.feed-following-button').click( function(){
+    if ( $(this).hasClass("btn-primary")) {
+      $(this).removeClass("btn-primary");
+      $('.feed-pc').html("<%= escape_javascript(render partial:'shared/feed')%>");
+      $('.feed-sp').html("<%= escape_javascript(render partial:'shared/feed')%>");
+    } else {
+      $(this).addClass("btn-primary");
+      $('.feed-pc').html("<%= escape_javascript(render partial:'feed_following')%>");
+      $('.feed-sp').html("<%= escape_javascript(render partial:'feed_following')%>");
+    }
+  });
+  
+  $('.new-button, .new-close').click( function(){
+    if ( $('aside').hasClass('active') ) {
+      $('aside').removeClass('active');
+      $('aside').fadeOut();
+      $('.new-close').css('display', 'none');
+    } else {
+      $('aside').addClass('active');
+      $('aside').fadeIn();
+      $('.new-close').css('display', 'block');
+    }
+  });
+  
+  $('.search-button, .search-close').click( function(){
+    if ( $('.micropost_search').hasClass('active') ) {
+      $('.micropost_search').removeClass('active');
+      $('.micropost_search').fadeOut();
+      $('.search-close').css('display', 'none');
+      $('.new-button').prop('disabled', false);
+    } else {
+      $('.micropost_search').addClass('active');
+      $('.feed').scrollTop(0);
+      $('.micropost_search').fadeIn();
+      $('.search-close').css('display', 'block');
+      $('.new-button').prop('disabled', true);
+    }
+  });
+  
+  $(function() {
+    $('.feed-sp').jscroll({
+      contentSelector: '.feed-sp',
+      nextSelector: 'li.next:last a'
+    });
+  });
+</script>
+
 <% else %>
-<div class="center jumbotron">
-  <h1>ようこそ、Trawithへ！</h1>
-  <h2>あなたも最高のトレーニングパートナーを見つけませんか？</h2>
-  <h2>さっそく</h2>
-  <%= link_to "登録する", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+  <div class="home-pc">
+    <h1>ようこそ、Trawithへ！</h1>
+    <h2>あなたも最高のトレーニングパートナーを見つけませんか？</h2>
+    <h2>さっそく</h2>
+    <%= link_to "登録する", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+  
+  <div class="home-sp" style="display: none;">
+    <h1>ようこそ、Trawithへ！</h1>
+    <h2>あなたも最高のトレーニングパートナーを見つけませんか？</h2>
+    <h2>さっそく</h2>
+    <%= link_to "登録する", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+
 <% end %>
+

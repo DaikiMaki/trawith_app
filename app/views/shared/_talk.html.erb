@@ -11,8 +11,10 @@
     </div>
     <div id="room">
       <% if @messages.present? %>
+      <div id="message-list">
         <%= render @messages %>
         <%= paginate @messages %>
+      </div>
       <% else %>
         <h3 id="first_comment">メッセージはまだありません</h3>
       <% end %>
@@ -37,7 +39,7 @@ $(document).on ("turbolinks:load", function (){
 
 $(function() {
   $('#room').jscroll({
-    contentSelector: '.fukidasi',
+    contentSelector: '#message-list',
     nextSelector: 'span.next:last a'
   });
 });

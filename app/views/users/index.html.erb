@@ -1,5 +1,6 @@
 <% provide(:title, "users") %>
 <%= search_form_for @search, url: user_search_path do |f| %>
+  <p class="close search-close" style="display: none;"><i class="fas fa-times fa-5x"></i></p>
   <div class="searchbox">
     <%= f.text_field :name_cont, placeholder: "名前で検索..."  %>
   </div>
@@ -7,8 +8,45 @@
 <% end %>
 <h1>ユーザー一覧</h1>
 
-<ul class="users">
-  <%= render @users %>
-</ul>
+<div class="users-pc">
+  <ul class="users">
+    <%= render @users %>
+  </ul>
+  <%= paginate @users %>
+</div>
 
-<%= will_paginate %>
+<div class="users-sp">
+  <ul class="users">
+    <%= render @users %>
+  </ul>
+  <%= paginate @users %>
+</div>
+<button class="search-button" style="display: none;"><i class="fas fa-search fa-7x"></i></button>
+
+<script>
+  
+  /* global $ */
+  
+  $(function() {
+    $('.users-sp').jscroll({
+      contentSelector: '.users-sp',
+      nextSelector: 'span.next:last a'
+    });
+  });
+  
+  $('.search-button, .search-close').click( function(){
+    if ( $('.user_search').hasClass('active') ) {
+      $('.user_search').removeClass('active');
+      $('.user_search').fadeOut();
+      $('.search-close').css('display', 'none');
+      $('.new-button').prop('disabled', false);
+    } else {
+      $('.user_search').addClass('active');
+      $('.feed').scrollTop(0);
+      $('.user_search').fadeIn();
+      $('.search-close').css('display', 'block');
+      $('.new-button').prop('disabled', true);
+    }
+  });
+  
+</script>
