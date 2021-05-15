@@ -82,7 +82,16 @@
       nextSelector: 'li.next:last a'
     });
   });
-</script>
+
+  $('.micropost-img').click( function() {
+    if ( $('.micropost-img').hasClass('expantion') ) {
+      $('.micropost-img').removeClass('expantion');
+    } else {
+      $('.micropost-img').addClass('expantion');
+    }
+  });
+  
+  </script>
 
 <% else %>
   <div class="home-pc">
