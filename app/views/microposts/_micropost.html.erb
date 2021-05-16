@@ -6,7 +6,7 @@
     部位：<%= micropost.split.name unless micropost.split_id.nil? %>
   </span>
   <span class="content">
-    <%= micropost.content %>
+    <%=safe_join(micropost.content.split("\n"),tag(:br))%>
     <%= image_tag micropost.display_image, class: 'micropost-img' if micropost.image.attached? %>
   </span>
   <span class="timestamp">

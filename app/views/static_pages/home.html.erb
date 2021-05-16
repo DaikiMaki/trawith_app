@@ -79,18 +79,10 @@
   $(function() {
     $('.feed-sp').jscroll({
       contentSelector: '.feed-sp',
-      nextSelector: 'li.next:last a'
+      nextSelector: 'span.next:last a'
     });
   });
 
-  $('.micropost-img').click( function() {
-    if ( $('.micropost-img').hasClass('expantion') ) {
-      $('.micropost-img').removeClass('expantion');
-    } else {
-      $('.micropost-img').addClass('expantion');
-    }
-  });
-  
   </script>
 
 <% else %>

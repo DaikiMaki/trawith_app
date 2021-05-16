@@ -104,6 +104,23 @@ footer {
   }
 }
 
+/* home */
+.home-pc {
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* about */
+.about-pc {
+  margin: 0 20%;
+}
+.home-pc h2, .about-pc h2{
+  font-size: 20px;
+}
+
 /* miscellaneous */
 
 .debug_dump {
@@ -119,6 +136,9 @@ footer {
 aside {
   section.user_info {
     margin-top: 20px;
+    h5 {
+      white-space: pre-line
+    }
   }
   section {
     padding: 10px 0;
@@ -157,6 +177,7 @@ aside {
   margin-top: 0;
   padding: 0;
   a {
+    width: 25%;
     float: left;
     text-align: center;
     padding: 0 10px;
@@ -393,8 +414,13 @@ span.image {
   font-weight: normal;
 }
 
+.says img {
+  width: 90%;
+}
+
 .submit-button {
   position: absolute;
+  bottom: 9.4%;
   right: 15px;
   line-height: 32px;
   width: 15%;
@@ -451,21 +477,10 @@ span.image {
 
 /* レスポンシブ */
 
-/* スマートフォン　*/
-// @media screen and (max-width: 599px) {
-//   .pc-nav {
-//     display: none;
-//   }
-//   #hamburger {
-//     display: block !important;
-//   }
-//   aside {
-//     display: none;
-//   }
-// }
+/* タブレット　*/
 
-@media screen and (min-width: 992px) {
-  .col-md-6 {
+@media screen and (max-width: 1024px) {
+ .col-md-6 {
     margin: 0;
     width: 100%;
   }
@@ -479,10 +494,6 @@ span.image {
   .col-md-4 {
     width: 100%;
   }
-}
-
-/* タブレット　*/
-@media screen and (max-width: 1024px) {
   header {
     height: 10vh;
   }
@@ -542,7 +553,297 @@ span.image {
     background-color: white;
     font-size: 40px !important;
   }
-  .new-close {
+  aside .new-close {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+  }
+  .search-close {
+    margin-right: 2.5%;
+  }
+  aside textarea {
+    height: 130px;
+  }
+  aside .btn {
+    font-size: 40px;
+  }
+  .new-button {
+    display: block !important;
+    position: fixed;
+    bottom: 20vh;
+    right: 40px;
+  }
+  .search-button {
+    display: block !important;
+    position: fixed;
+    bottom: 11vh;
+    right: 40px;
+  }
+  span {
+    font-size: 35px !important;
+  }
+  .feed-pc {
+    display: none;
+  }
+  .feed-sp {
+    display: block !important;
+  }
+  .feed-sp .gravatar, aside .gravatar {
+    width: 100px;
+  }
+  .post {
+    width: 100%;
+  }
+  .container {
+    margin: 0 auto;
+    width: 95%;
+  }
+  .all-contents {
+    padding-top: 11vh;
+  }
+  .micropost_search, .user_search {
+    display: none;
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    padding-bottom: 50px;
+    width: 100%;
+    z-index: 1031;
+    background-color: white;
+    font-size: 40px !important;
+  }
+  option {
+    font-size: 15px !important;
+  }
+  .micropost_search .btn, .user_search .btn {
+    font-size: 40px;
+  }
+  h3, h1 {
+    font-size: 50px;
+  }
+  h5 {
+    font-size: 40px;
+  }  
+  .feed-following-button {
+    font-size: 35px;
+    margin-top: -55px;
+  }
+  .feed-sp span {
+    font-size: 30px;
+  }
+  .feed-sp .pagination {
+    display: none;
+  }
+  .new-button, .search-button {
+    border: none;  
+    outline: none; 
+    background: transparent; 
+  }
+  .users-pc {
+    display: none;
+    z-index: 10;
+  }
+  .users {
+    padding: 0;
+  }
+  .user_search {
+    display: none;
+  }
+  .users-sp {
+    display: block !important;
+    list-style: none;
+    margin: 0;
+  }
+  .users-sp li {
+    font-size: 30px;
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+  .users-sp .gravatar {
+    width: 100px;
+  }
+  .users-sp span {
+    font-size: 30px;
+  }
+  .users-sp .pagination, .user-micropost-sp .pagination {
+    display: none;
+  }
+  .user-edit, .user-edit .btn {
+    font-size: 40px;
+  }
+  .user-show {
+    display: block !important;
+    position: sticky !important;
+    padding: 0;
+    z-index: 1;
+  }
+  .rooms .gravatar {
+    width: 100px;
+  }
+  form, form .btn {
+    font-size: 40px;
+  }
+  input[type="checkbox"] {
+    transform: scale(3.0);
+    margin-top: 20px;
+    top: 3px;
+  }
+  .checkbox span {
+    margin-left: 35px;
+  }
+  .login-form p {
+    font-size: 40px;
+  }
+  .form-control {
+    font-size: 40px;
+  }
+  .home-pc, .about-pc {
+    display: none;
+  }
+  .home-sp {
+    display: block !important;
+    text-align: center;
+    margin-top: 30%;
+  }
+  .about-sp {
+    display: block !important;
+    text-align: center;
+  }
+  .home-sp h1, .about-sp h1 {
+    font-size: 80px;
+  }
+  .home-sp h2, .home-sp .btn, .about-sp h2 {
+    font-size: 60px;
+  }
+  .fukidasi .icon .gravatar {
+    width: 50px;
+  }
+  .messaging p, .says p {
+    font-size: 30px;
+  }
+  .messaging p {
+    margin-top: -10px;
+    margin-left: 60px;
+    margin-bottom: 0;
+  }
+  .says {
+    margin-left: 0;
+  }
+  #message form textarea {
+    width: 100%;
+  }
+  .submit-button {
+    position: static;
+    margin-left: 50%;
+    transform: translateX(-60%);
+  }
+  .microposts .timestamp, .microposts .content {
+    margin-left: 110px;
+  }
+  .microposts .gravatar {
+    width: 100px;
+  }
+  .room-destroy {
+    font-size: 25px;
+  }
+  .says img {
+    margin-left: 60px;
+  }
+  #message {
+    display: none;
+    position: fixed;
+    bottom: 10vh;
+    left: 0;
+    padding-bottom: 50px;
+    width: 100%;
+    z-index: 1031;
+    background-color: white;
+    font-size: 40px !important;
+  }
+  #message .new-close {
+    position: fixed;
+    bottom: 10vh;
+    right: 3%;
+  }
+  #room {
+    height: 70vh;
+  }
+  .user-micropost-pc {
+    display: none;
+  }
+  .user-micropost-sp {
+    display: block !important;
+    width: 100%;
+  }
+  .follow-button, .unfollow-button {
+    font-size: 60px !important;
+  }
+}
+
+
+/* スマートフォン　*/
+@media screen and (max-width: 599px) {
+  header {
+    height: 10vh;
+  }
+  header #logo {
+    line-height: 10vh;
+    font-size: 50px;
+    width: 25vw;
+    padding: 0;
+    margin: 0;
+  }
+  .alert {
+    font-size: 40px;
+  }
+  .footer-pc {
+    display: none;
+  }
+  .footer-sp {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 10vh;
+    width: 100%;
+    margin: 0;
+    background-color: white;
+    border: 2px solid #dee2e6;
+  }
+  .footer-sp ul {
+    width: 100%;
+    float: left;
+    padding: 0;
+  }
+  .footer-sp li {
+    width: 25%;
+    line-height: 10vh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .footer-sp i {
+    line-height: 10vh;
+  }
+  .pc-nav {
+    display: none;
+  }
+  .btn-trigger, .btn-trigger span {
+    display: block !important;
+  }
+  aside {
+    display: none;
+    top: 0;
+    left: 0;
+    padding-top: 10vh;
+    width: 100%;
+    height: 100%;
+    z-index: 1031;
+    background-color: white;
+    font-size: 40px !important;
+  }
+  aside .new-close {
     position: fixed;
     top: 10px;
     right: 20px;
@@ -726,6 +1027,34 @@ span.image {
     margin-left: 50%;
     transform: translateX(-60%);
   }
+  .microposts .timestamp, .microposts .content {
+    margin-left: 110px;
+  }
+  .room-destroy {
+    font-size: 25px;
+  }
+  .says img {
+    margin-left: 60px;
+  }
+  #message {
+    display: none;
+    position: fixed;
+    bottom: 10vh;
+    left: 0;
+    padding-bottom: 50px;
+    width: 100%;
+    z-index: 1031;
+    background-color: white;
+    font-size: 40px !important;
+  }
+  #message .new-close {
+    position: fixed;
+    bottom: 10vh;
+    right: 3%;
+  }
+  #room {
+    height: 70vh;
+  }
 }
 
 .btn-trigger {
@@ -765,8 +1094,8 @@ span.image {
 }
 
 #btn01.active span:nth-of-type(1) {
-  -webkit-transform: translateY(20px) rotate(-45deg);
-  transform: translateY(20px) rotate(-45deg);
+  -webkit-transform: translateY(17.2px) rotate(-45deg);
+  transform: translateY(17.2px) rotate(-45deg);
 }
 
 #btn01.active span:nth-of-type(2) {
@@ -774,8 +1103,8 @@ span.image {
 }
 
 #btn01.active span:nth-of-type(3) {
-  -webkit-transform: translateY(-20px) rotate(45deg);
-  transform: translateY(-20px) rotate(45deg);
+  -webkit-transform: translateY(-17.2px) rotate(45deg);
+  transform: translateY(-17.2px) rotate(45deg);
 }
 
 .sp-nav {
@@ -857,11 +1186,27 @@ span.image {
   display: none;
 }
 
-.expantion {
-  position: fixed;
-  z-index: 1033;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.room-path:hover {
+  background-color: #f2f2f2;
+}
+
+.room-path {
+  color: black;
+}
+
+.room-destroy {
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+}
+
+.follow-button, .unfollow-button {
+  border: none;  
+  outline: none; 
+  background: transparent; 
+  font-size: 20px;
+}
+
+.users-pc .pagination {
+  margin-left: 40px;
 }

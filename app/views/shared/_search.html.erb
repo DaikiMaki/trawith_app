@@ -4,4 +4,6 @@
   </ol>
   <%= paginate @search_microposts, 
             params: { controller: :microposts, action: :search }%>
+<% else %>
+  <h4>該当するものが見つかりませんでした</h4>
 <% end %>

@@ -6,28 +6,31 @@
     <ul class="rooms">
       <% @another_entries.each do |e| %>
         <li>
-          <%= link_to gravatar_for(e.user, size: 50), user_path(e.user) %>
-          <span class="user">
-          <%= link_to e.user.name, user_path(e.user) %>
-          </span>
-          <span class="message">
+          <%= link_to gravatar_for(e.user, size: 50), e.user %>
           <%= link_to room_path(e.room) do %>
-            <% if Message.find_by(id: e.room.message_ids.last) %>
-              <%= Message.find_by(id: e.room.message_ids.last).message.truncate(38, omission: "...") %>
-            <% else %>
-              トークを始めましょう！
-            <% end %>
+            <div class="room-path">
+              <span class="user">
+              <%= e.user.name %>
+              </span>
+              <span class="message">
+                <% if Message.find_by(id: e.room.message_ids.last) %>
+                  <%= Message.find_by(id: e.room.message_ids.last).message.truncate(38, omission: "...") %>
+                <% else %>
+                  トークを始めましょう！
+                <% end %>
+              </span>
+              <span class="timestamp">
+                <% if Message.find_by(id: e.room.message_ids.last) %>
+                  <%= Message.find_by(id: e.room.message_ids.last).created_at.strftime("%Y-%m-%d %H:%M") %>
+                <% else %>
+                  <%= e.created_at.strftime("%Y-%m-%d %H:%M") %>
+                <% end %>
+              </span>
+            </div>
           <% end %>
-          </span>
-          <span class="timestamp">
-            <% if Message.find_by(id: e.room.message_ids.last) %>
-              <%= Message.find_by(id: e.room.message_ids.last).created_at.strftime("%Y-%m-%d %H:%M") %>
-            <% else %>
-              <%= e.created_at.strftime("%Y-%m-%d %H:%M") %>
-            <% end %>
             <%= link_to "トークルームを削除", e.room, method: :delete,
-                                       data: { confirm: "削除してもよろしいですか？" } %>
-          </span>
+                                       data: { confirm: "削除してもよろしいですか？" },
+                                       class: "room-destroy" %>
         </li>
       <% end %>
     </ul>

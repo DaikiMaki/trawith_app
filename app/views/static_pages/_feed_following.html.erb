@@ -4,4 +4,6 @@
   </ol>
   <%= paginate @feed_following_items, 
             params: { controller: :static_pages, action: :home }%>
+<% else %>
+  <h4>フォローしているユーザーの投稿が見ることができます</h4>
 <% end %>

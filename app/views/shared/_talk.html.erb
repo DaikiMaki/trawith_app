@@ -24,26 +24,26 @@
         <%= f.text_area :message, placeholder: "入力...", id: "message_form", maxlength: "140" %>
         <%= f.hidden_field :room_id, value: @room.id %>
         <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
-        <%= f.submit "送信", class: "btn btn-primary submit-button disabled", id: "message_button" %>
+        <%= f.submit "送信", class: "btn btn-primary submit-button disabled", id: "message_button", data: {disable_with: '送信中...'} %>
       <% end %>
+      <p class="close new-close" style="display: none;"><i class="fas fa-times fa-5x"></i></p>
     </div>
+    <button class="new-button" style="display: none;"><i class="fas fa-plus-circle fa-7x"></i></button>
   </div>
 </div>
 
 <script>
-$(document).on ("turbolinks:load", function (){
   const room = document.getElementById('room');
   $('#page-top').on('click', function () {
     $('#room').scrollTop(0);
   });
-});
 
-$(function() {
-  $('#room').jscroll({
-    contentSelector: '#message-list',
-    nextSelector: 'span.next:last a'
+  $(function() {
+    $('#room').jscroll({
+      contentSelector: '#message-list',
+      nextSelector: 'span.next:last a'
+    });
   });
-});
 
   $("#message_image").bind("change", function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
@@ -52,7 +52,22 @@ $(function() {
       $("#message_image").val("");
     }
   });
-
+  
+  $('.new-button, .new-close').click( function(){
+    if ( $('#message').hasClass('active') ) {
+      $('#message').removeClass('active');
+      $('#message').fadeOut();
+      $('.new-close').css('display', 'none');
+    } else {
+      $('#message').addClass('active');
+      $('#message').fadeIn();
+      $('.new-close').css('display', 'block');
+    }
+  });
+  
+  $('#message').on('submit', function(){
+    $('#message_button').removeAttr('data-disable_with');
+  });
 
 </script>
 
