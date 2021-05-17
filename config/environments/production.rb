@@ -114,23 +114,17 @@ Rails.application.configure do
   config.force_ssl = true
   
 
-  host = 'cherry-crisp-98435.herokuapp.com'
-    #deviseが認証用のURLなどを生成するのに必要になる（らしい）
-  config.action_mailer.default_url_options = { host: host }
-  #送信方法を指定（この他に:sendmail/:file/:testなどがあります)
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  #送信方法として:smtpを指定した場合は、このconfigを使って送信詳細の設定を行います
-  config.action_mailer.smtp_settings = {
-    #gmail利用時はaddress,domain,portは下記で固定
-    address:"smtp.gmail.com",
-    domain: 'gmail.com',
-    port:587,
-    #gmailのユーザアカウント（xxxx@gmail.com)※念のため、credentials.yml.enc行き
-    user_name: 'makidaiki9180@gmail.com',
-    #gmail２段階認証回避のためにアプリケーションでの利用パスワードを取得、必ずcredentials.yml.endに設定を！！
-    password: '918012345',
-    #パスワードをBase64でエンコード
-    authentication: :login
+  host = 'cherry-crisp-98435.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.smtp_settings = {
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => host,
+    :authentication => :plain,
   }
 
   
