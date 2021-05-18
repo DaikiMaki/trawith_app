@@ -22,10 +22,14 @@
   <div class="col-md-8 user-micropost-pc" style="float: right; min-height: 50vh; width: 62%">
     <h3>投稿数(<%= @user.microposts.count %>)</h3>
     <% if @user.microposts.any? %>
-        <ol class="microposts">
-          <%= render @microposts %>
-        </ol>
-        <%= paginate @microposts %>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= paginate @microposts %>
+    <% else %>
+      <h4>
+        投稿はまだありません
+      </h4>
     <% end %>
   </div>
   
