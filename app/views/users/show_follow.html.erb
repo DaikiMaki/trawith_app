@@ -27,3 +27,14 @@
     <%= paginate @users %>
   </div>
 </div>
+
+<script>
+  
+  $(function() {
+    $('.users-sp').jscroll({
+      contentSelector: '.users-sp',
+      nextSelector: 'span.next:last a'
+    });
+  });
+  
+</script>
