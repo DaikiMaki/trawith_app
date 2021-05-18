@@ -4,7 +4,7 @@ class InquiryMailer < ApplicationMailer
     @inquiry = inquiry
     @user = User.find_by(id: @inquiry.user_id)
     mail(
-      to: ENV['SECRET_MAIL'],
+      to: ENV['GMAIL_USERNAME'],
       subject: 'お問い合わせ通知'
     )
   end
