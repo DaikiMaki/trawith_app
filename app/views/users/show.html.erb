@@ -36,10 +36,14 @@
   <div class="col-md-8 user-micropost-sp" style="display: none;">
     <h3>投稿数(<%= @user.microposts.count %>)</h3>
     <% if @user.microposts.any? %>
-        <ol class="microposts">
-          <%= render @microposts %>
-        </ol>
-        <%= paginate @microposts %>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= paginate @microposts %>
+    <% else %>
+      <h4>
+        投稿はまだありません
+      </h4>
     <% end %>
   </div>
 
