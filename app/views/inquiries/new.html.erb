@@ -2,14 +2,29 @@
 <h1>お問い合わせ</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3" id="inquiry">
     <%= form_with(model: @inquiry, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       
       <%= f.label :message %>
       <%= f.text_area :message, class: "form_control" %>
       
-      <%= f.submit "送信する", class: "btn btn-primary" %>
+      <%= f.submit "送信する", class: "btn btn-primary", id: "inquiry_button", data: {disable_with: '送信中...'} %>
     <% end %>
   </div>
 </div>
+
+<style>
+.footer-pc {
+  display:none;
+}
+</style>
+
+<script>
+  
+    $('#inquiry').on('submit', function(){
+    $('#inquiry_button').removeAttr('data-disable_with');
+  });
+
+  
+</script>
