@@ -54,6 +54,10 @@ h2 {
   color: $gray-light;
 }
 
+.user-show-h3 {
+  margin-left: 40%;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -478,8 +482,6 @@ span.image {
 
 /* レスポンシブ */
 
-/* タブレット　*/
-
 @media screen and (max-width: 1024px) {
  .col-md-6 {
     margin: 0;
@@ -588,6 +590,7 @@ span.image {
   }
   .feed-sp {
     display: block !important;
+    margin-bottom: 1vh;
   }
   .feed-sp .gravatar, aside .gravatar {
     width: 100px;
@@ -619,8 +622,11 @@ span.image {
   .micropost_search .btn, .user_search .btn {
     font-size: 40px;
   }
-  h3, h1 {
+  h3, h1, h4 {
     font-size: 50px;
+  }
+  .user-show-h3 {
+    margin: 0;
   }
   h5 {
     font-size: 40px;
@@ -675,8 +681,9 @@ span.image {
   }
   .user-show {
     display: block !important;
-    position: sticky !important;
+    position: static !important;
     padding: 0;
+    margin-bottom: 5%;
     z-index: 1;
   }
   .rooms .gravatar {
@@ -782,281 +789,6 @@ span.image {
   }
 }
 
-
-/* スマートフォン　*/
-@media screen and (max-width: 599px) {
-  header {
-    height: 10vh;
-  }
-  header #logo {
-    line-height: 10vh;
-    font-size: 50px;
-    width: 25vw;
-    padding: 0;
-    margin: 0;
-  }
-  .alert {
-    font-size: 40px;
-  }
-  .footer-pc {
-    display: none;
-  }
-  .footer-sp {
-    display: block !important;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 10vh;
-    width: 100%;
-    margin: 0;
-    background-color: white;
-    border: 2px solid #dee2e6;
-  }
-  .footer-sp ul {
-    width: 100%;
-    float: left;
-    padding: 0;
-  }
-  .footer-sp li {
-    width: 25%;
-    line-height: 10vh;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  .footer-sp i {
-    line-height: 10vh;
-  }
-  .pc-nav {
-    display: none;
-  }
-  .btn-trigger, .btn-trigger span {
-    display: block !important;
-  }
-  aside {
-    display: none;
-    top: 0;
-    left: 0;
-    padding-top: 10vh;
-    width: 100%;
-    height: 100%;
-    z-index: 1031;
-    background-color: white;
-    font-size: 40px !important;
-  }
-  aside .new-close {
-    position: fixed;
-    top: 10px;
-    right: 20px;
-  }
-  .search-close {
-    margin-right: 2.5%;
-  }
-  aside textarea {
-    height: 130px;
-  }
-  aside .btn {
-    font-size: 40px;
-  }
-  .new-button {
-    display: block !important;
-    position: fixed;
-    bottom: 20vh;
-    right: 40px;
-  }
-  .search-button {
-    display: block !important;
-    position: fixed;
-    bottom: 11vh;
-    right: 40px;
-  }
-  span {
-    font-size: 35px !important;
-  }
-  .feed-pc {
-    display: none;
-  }
-  .feed-sp {
-    display: block !important;
-  }
-  .feed-sp .gravatar, aside .gravatar {
-    width: 100px;
-  }
-  .post {
-    width: 100%;
-  }
-  .container {
-    margin: 0 auto;
-    width: 95%;
-  }
-  .all-contents {
-    padding-top: 11vh;
-  }
-  .micropost_search, .user_search {
-    display: none;
-    position: fixed;
-    top: 10vh;
-    left: 0;
-    padding-bottom: 50px;
-    width: 100%;
-    z-index: 1031;
-    background-color: white;
-    font-size: 40px !important;
-  }
-  option {
-    font-size: 15px !important;
-  }
-  .micropost_search .btn, .user_search .btn {
-    font-size: 40px;
-  }
-  h3, h1 {
-    font-size: 50px;
-  }
-  h5 {
-    font-size: 40px;
-  }  
-  .feed-following-button {
-    font-size: 35px;
-    margin-top: -55px;
-  }
-  .feed-sp span {
-    font-size: 30px;
-  }
-  .feed-sp .pagination {
-    display: none;
-  }
-  .new-button, .search-button {
-    border: none;  
-    outline: none; 
-    background: transparent; 
-  }
-  .users-pc {
-    display: none;
-    z-index: 10;
-  }
-  .users {
-    padding: 0;
-  }
-  .user_search {
-    display: none;
-  }
-  .users-sp {
-    display: block !important;
-    list-style: none;
-    margin: 0;
-  }
-  .users-sp li {
-    font-size: 30px;
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
-  .users-sp .gravatar {
-    width: 100px;
-  }
-  .users-sp span {
-    font-size: 30px;
-  }
-  .users-sp .pagination {
-    display: none;
-  }
-  .user-edit, .user-edit .btn {
-    font-size: 40px;
-  }
-  .user-show {
-    display: block !important;
-    padding: 0;
-    z-index: 1;
-  }
-  .rooms .gravatar {
-    width: 100px;
-  }
-  form, form .btn {
-    font-size: 40px;
-  }
-  input[type="checkbox"] {
-    transform: scale(3.0);
-    margin-top: 20px;
-    top: 3px;
-  }
-  .checkbox span {
-    margin-left: 35px;
-  }
-  .login-form p {
-    font-size: 40px;
-  }
-  .form-control {
-    font-size: 40px;
-  }
-  .home-pc, .about-pc {
-    display: none;
-  }
-  .home-sp {
-    display: block !important;
-    text-align: center;
-    margin-top: 30%;
-  }
-  .about-sp {
-    display: block !important;
-    text-align: center;
-  }
-  .home-sp h1, .about-sp h1 {
-    font-size: 80px;
-  }
-  .home-sp h2, .home-sp .btn, .about-sp h2 {
-    font-size: 60px;
-  }
-  .fukidasi .icon .gravatar {
-    width: 50px;
-  }
-  .messaging p, .says p {
-    font-size: 30px;
-  }
-  .messaging p {
-    margin-top: -10px;
-    margin-left: 60px;
-    margin-bottom: 0;
-  }
-  .says {
-    margin-left: 0;
-  }
-  #message form textarea {
-    width: 100%;
-  }
-  .submit-button {
-    position: static;
-    margin-left: 50%;
-    transform: translateX(-60%);
-  }
-  .microposts .timestamp, .microposts .content {
-    margin-left: 110px;
-  }
-  .room-destroy {
-    font-size: 25px;
-  }
-  .says img {
-    margin-left: 60px;
-  }
-  #message {
-    display: none;
-    position: fixed;
-    bottom: 10vh;
-    left: 0;
-    padding-bottom: 50px;
-    width: 100%;
-    z-index: 1031;
-    background-color: white;
-    font-size: 40px !important;
-  }
-  #message .new-close {
-    position: fixed;
-    bottom: 10vh;
-    right: 3%;
-  }
-  #room {
-    height: 70vh;
-  }
-}
 
 .btn-trigger {
   position: relative;
@@ -1215,3 +947,4 @@ span.image {
 #inquiry_message {
   height: 20vh;
 }
+

@@ -18,9 +18,8 @@
       <%= render 'shared/stats' %>
     </section>
   </aside>
-  
+  <h3 class="user-show-h3">投稿数(<%= @user.microposts.count %>)</h3>
   <div class="col-md-8 user-micropost-pc" style="float: right; min-height: 50vh; width: 62%">
-    <h3>投稿数(<%= @user.microposts.count %>)</h3>
     <% if @user.microposts.any? %>
       <ol class="microposts">
         <%= render @microposts %>
@@ -34,7 +33,6 @@
   </div>
   
   <div class="col-md-8 user-micropost-sp" style="display: none;">
-    <h3>投稿数(<%= @user.microposts.count %>)</h3>
     <% if @user.microposts.any? %>
       <ol class="microposts">
         <%= render @microposts %>
@@ -54,7 +52,8 @@
   $(function() {
   $('.user-micropost-sp').jscroll({
     contentSelector: '.microposts',
-    nextSelector: 'span.next:last a'
+    nextSelector: 'span.next:last a',
+    loadingHtml: '読み込み中'
     });
   });
 
