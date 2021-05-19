@@ -1,6 +1,6 @@
 <% provide(:title, @title) %>
 <div class="row">
-  <aside class="col-md-4" style="position: fixed;">
+  <aside class="col-md-3" style="position: fixed;">
     <section class="user_info">
       <% if @user.image? %>
         <%= image_tag @user.image.thumb.url, class: "gravatar", size: "50x50" %>
@@ -15,9 +15,8 @@
       <%= render 'shared/stats' %>
     </section>
   </aside>
-  <h1><%= @title %></h1>
-  
   <div class="col-md-8 users-pc" style="float: right;">
+    <h3><%= @title %></h3>
     <ul class="users">
       <%= render @users %>
     </ul>
