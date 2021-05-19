@@ -51,9 +51,9 @@
     
   $(function() {
   $('.user-micropost-sp').jscroll({
-    contentSelector: '.microposts',
-    nextSelector: 'span.next:last a',
-    loadingHtml: '読み込み中'
+      contentSelector: '.microposts',
+      nextSelector: 'span.next:last a',
+      loadingHtml: '<i class="fa fa-spinner fa-pulse fa-7x fa-fw loading"></i>'
     });
   });
 
