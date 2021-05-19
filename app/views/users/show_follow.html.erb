@@ -2,7 +2,11 @@
 <div class="row">
   <aside class="col-md-4" style="position: fixed;">
     <section class="user_info">
-      <%= gravatar_for @user %>
+      <% if @user.image? %>
+        <%= image_tag @user.image.thumb.url, class: "gravatar", size: "50x50" %>
+      <% else %>
+        <%= image_tag "/assets/default.png", class: "gravatar", size: '50x50' %>
+      <% end %>
       <h1><%= @user.name %></h1>
       <span><%= link_to "プロフィール", @user %></span>
       <span><b>投稿数:</b> <%= @user.microposts.count %></span>

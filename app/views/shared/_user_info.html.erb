@@ -1,4 +1,10 @@
-<%= link_to gravatar_for(current_user, size: 50), current_user %>
+<%= link_to current_user do %>
+  <% if current_user.image? %>
+    <%= image_tag current_user.image.thumb.url, class: "gravatar", size: "50x50" %>
+  <% else %>
+    <%= image_tag "/assets/default.png", class: "gravatar", size: '50x50' %>
+  <% end %>
+<% end %>
 <h1><%= current_user.name %></h1>
 <span><%= link_to "プロフィール", current_user %></span>
 <span><%= current_user.microposts.count %> 投稿</span>

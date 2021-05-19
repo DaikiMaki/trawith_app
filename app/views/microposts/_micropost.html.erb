@@ -1,5 +1,11 @@
 <li id="micropost-<%= micropost.id %>">
-  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
+  <%= link_to micropost.user do %>
+    <% if micropost.user.image? %>
+      <%= image_tag micropost.user.image.thumb.url, class: "gravatar", size: "50x50" %>
+    <% else %>
+      <%= image_tag "/assets/default.png", class: "gravatar", size: '50x50' %>
+    <% end %>
+  <% end %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="details">
     場所：<%= micropost.prefecture.name unless micropost.prefecture_id.nil? %>｜

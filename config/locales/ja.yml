@@ -17,6 +17,7 @@ ja:
         password_confirmation: パスワード再入力
         new_password: 新しいパスワード
         new_password_confirmation: 新しいパスワード再入力
+        image: プロフィール画像
       micropost:
         prefecture: 場所
         split: 部位

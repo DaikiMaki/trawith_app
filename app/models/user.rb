@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :image, ImageUploader
   has_many :inquiry,  dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :entries,  dependent: :destroy
@@ -24,7 +25,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, 
                        length: { minimum: 6 }, 
-                       allow_nil: true                                                               
+                       allow_nil: true                    
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -100,6 +101,10 @@ class User < ApplicationRecord
   def create_activation_digest
     self.activation_token = User.new_token
     self.activation_digest = User.digest(activation_token)
+  end
+  
+  def display_image
+    image.variant(resize_to_fit: [100, 100])
   end
   
 end

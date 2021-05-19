@@ -32,6 +32,10 @@ textarea {
   }
 }
 
+.row {
+  min-height: 50vh;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -217,7 +221,7 @@ aside {
 }
 
 .introduction {
-  margin-left: 90px;
+  margin-left: 55px;
 }
 
 /* forms */
@@ -339,6 +343,13 @@ span.image {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
+  h4 {
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .user {
     margin-top: 5em;
     padding-top: 0;
@@ -390,15 +401,9 @@ span.image {
   width: 40px;
 }
 
-.fukidasi .icon img{
-  width: 90%;
-  height: auto;
-  border-radius: 10px;
-}
-
 .fukidasi .messaging {
   width: 100%;
-  text-align: left;
+  margin-left: 15px;
   font-size: 13px;
 }
 
@@ -465,7 +470,7 @@ span.image {
 .room-icon .icon {
   line-height: 70px;
   img {
-    position: absolute;
+    position: relative;
     top: 10px;
     left: 45%;
   }
@@ -538,6 +543,10 @@ span.image {
   }
   .footer-sp i {
     line-height: 10vh;
+  }
+  .gravatar {
+    width: 100px;
+    height: 100px;
   }
   .pc-nav {
     display: none;
@@ -668,9 +677,6 @@ span.image {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
-  .users-sp .gravatar {
-    width: 100px;
-  }
   .users-sp span {
     font-size: 30px;
   }
@@ -687,8 +693,8 @@ span.image {
     margin-bottom: 5%;
     z-index: 1;
   }
-  .rooms .gravatar {
-    width: 100px;
+  .introduction {
+    margin-left: 105px;
   }
   form, form .btn {
     font-size: 40px;
@@ -725,11 +731,11 @@ span.image {
   .home-sp h2, .home-sp .btn, .about-sp h2 {
     font-size: 60px;
   }
-  .fukidasi .icon .gravatar {
-    width: 50px;
-  }
   .messaging p, .says p {
     font-size: 30px;
+  }
+  .messaging {
+    margin-left: 60px !important;
   }
   .messaging p {
     margin-top: -10px;
@@ -750,9 +756,6 @@ span.image {
   .microposts .timestamp, .microposts .content {
     margin-left: 110px;
   }
-  .microposts .gravatar {
-    width: 100px;
-  }
   .room-destroy {
     font-size: 25px;
   }
@@ -765,7 +768,8 @@ span.image {
     bottom: 10vh;
     left: 0;
     padding-bottom: 50px;
-    width: 100%;
+    width: 93%;
+    margin-left: 3.5%;
     z-index: 1031;
     background-color: white;
     font-size: 40px !important;
@@ -778,6 +782,12 @@ span.image {
   #room {
     height: 70vh;
   }
+  .room-icon {
+    height: 120px;
+  }
+  .room-icon .icon {
+    line-height: 120px;
+  }
   .user-micropost-pc {
     display: none;
   }
@@ -788,6 +798,10 @@ span.image {
   .follow-button, .unfollow-button {
     font-size: 60px !important;
   }
+  .user-edit-icon {
+    line-height: 120px;
+  }
+  
 }
 
 

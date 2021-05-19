@@ -4,7 +4,11 @@
       <div class="icon">
         <% @entries.each do |e| %>
           <% unless e.user == current_user %>
-          <button id="page-top"><%= gravatar_for(e.user, size: 50) %></button>
+            <% if e.user.image? %>
+              <%= image_tag e.user.image.thumb.url, class: "gravatar", size: "50x50", id: "page-top" %>
+            <% else %>
+              <%= image_tag "/assets/default.png", class: "gravatar", size: "50x50", id: "page-top" %>
+            <% end %>
           <% end %>
         <% end %>
       </div>

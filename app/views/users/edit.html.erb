@@ -1,8 +1,15 @@
 <% provide(:title, "Edit user") %>
+
 <h1>アカウント編集</h1>
+<div class="user-edit-icon">
+  <div class="icon">
+  </div>
+</div>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3 user-edit">
+
+    
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       
@@ -21,12 +28,19 @@
       <%= f.label :new_password_confirmation %>
       <%= f.password_field :password_confirmation, class: "form_control" %>
       
+      <%= f.label :image %>
+      <% if @user.image? %>
+        <%= image_tag @user.image.thumb.url, class: "gravatar", size: "50x50" %>
+      <% else %>  
+        <%= image_tag "/assets/default.png", class: "gravatar", size: "50x50" %>
+      <% end %>
+
+      <%= f.file_field :image, class: "form_control" %>
+
+      
       <%= f.submit "変更を保存する", class: "btn btn-primary" %>
     <% end %>
-    <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="https://gravatar.com/emails" target="_blank">画像を変更する</a>
-    </div>
+
     <% if !@user.admin? %>
     <div>
       <%= link_to "アカウントを削除", @user, method: :delete,

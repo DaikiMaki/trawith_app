@@ -1,6 +1,12 @@
 <div class="fukidasi">
   <div class="icon">
-    <%= link_to gravatar_for(message.user, size: 50), user_path(message.user) %>
+    <%= link_to user_path(message.user) do %>
+      <% if message.user.image? %>
+        <%= image_tag message.user.image.thumb.url, class: "gravatar", size: "50x50" %>
+      <% else %>
+        <%= image_tag "/assets/default.png", class: "gravatar", size: '50x50' %>
+      <% end %>
+    <% end %>
   </div>
   <div class="messaging">
     <p><%= message.user.name %><span><%= message.created_at.strftime("%m-%d %H:%M") %></span></p>

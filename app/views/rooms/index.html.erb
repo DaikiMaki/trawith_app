@@ -4,34 +4,44 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <ul class="rooms">
-      <% @another_entries.each do |e| %>
-        <li>
-          <%= link_to gravatar_for(e.user, size: 50), e.user %>
-          <%= link_to room_path(e.room) do %>
-            <div class="room-path">
-              <span class="user">
-              <%= e.user.name %>
-              </span>
-              <span class="message">
-                <% if Message.find_by(id: e.room.message_ids.last) %>
-                  <%= Message.find_by(id: e.room.message_ids.last).message.truncate(38, omission: "...") %>
-                <% else %>
-                  トークを始めましょう！
-                <% end %>
-              </span>
-              <span class="timestamp">
-                <% if Message.find_by(id: e.room.message_ids.last) %>
-                  <%= Message.find_by(id: e.room.message_ids.last).created_at.strftime("%Y-%m-%d %H:%M") %>
-                <% else %>
-                  <%= e.created_at.strftime("%Y-%m-%d %H:%M") %>
-                <% end %>
-              </span>
-            </div>
-          <% end %>
-            <%= link_to "トークルームを削除", e.room, method: :delete,
-                                       data: { confirm: "削除してもよろしいですか？" },
-                                       class: "room-destroy" %>
-        </li>
+      <% if @another_entries.any? %>
+        <% @another_entries.each do |e| %>
+          <li>
+            <%= link_to e.user do %>
+              <% if e.user.image? %>
+                <%= image_tag e.user.image.thumb.url, class: "gravatar", size: "50x50" %>
+              <% else %>
+                <%= image_tag "/assets/default.png", class: "gravatar", size: '50x50' %>
+              <% end %>
+            <% end %>
+            <%= link_to room_path(e.room) do %>
+              <div class="room-path">
+                <span class="user">
+                <%= e.user.name %>
+                </span>
+                <span class="message">
+                  <% if Message.find_by(id: e.room.message_ids.last) %>
+                    <%= Message.find_by(id: e.room.message_ids.last).message.truncate(38, omission: "...") %>
+                  <% else %>
+                    トークを始めましょう！
+                  <% end %>
+                </span>
+                <span class="timestamp">
+                  <% if Message.find_by(id: e.room.message_ids.last) %>
+                    <%= Message.find_by(id: e.room.message_ids.last).created_at.strftime("%Y-%m-%d %H:%M") %>
+                  <% else %>
+                    <%= e.created_at.strftime("%Y-%m-%d %H:%M") %>
+                  <% end %>
+                </span>
+              </div>
+            <% end %>
+              <%= link_to "トークルームを削除", e.room, method: :delete,
+                                         data: { confirm: "削除してもよろしいですか？" },
+                                         class: "room-destroy" %>
+          </li>
+        <% end %>
+      <% else %>
+        <h4>トークルームはありません</h4>
       <% end %>
     </ul>
   </div>
