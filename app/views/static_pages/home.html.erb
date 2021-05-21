@@ -91,39 +91,72 @@
     <div class="Heading">
       <div class="Heading-list">
         <h1>フィットネスを、ブームから文化に。</h1>
-        <p>Trawithなら、最高のトレーニングパートナーを見つけることができます。<br>さっそく</p>
+        <p>Trawithなら、最高のトレーニングパートナーを<br>見つけることができます。<br>さっそく</p>
         <%= link_to "登録する", signup_path, class: "btn btn-lg btn-primary" %>
         <%= link_to "ログイン", login_path, class: "btn btn-lg btn-success" %>
       </div>
     </div>
     <div class="about">
-      <h1>Trawithとは</h1>
+      <h1><i class="far fa-question-circle"></i>Trawithとは</h1>
       <p>トレーニングパートナーを募集するサービスです。</p>
     </div>
-    <div class="function">
-      <h1>Trawithでできること</h1>
-      <ul class="function-list">
-        <li style="background-color: #f3f3f3;">
-          <h2 style="float: left;"><i class="fas fa-globe"></i>募集機能</h2>
-          <%= image_tag "/assets/new-pc.png" %>
-          <p>一緒にトレーニングしたい場所と部位を入力し、より詳細な情報を入力することで募集することができます。</p>
-        </li>
-        <li>
-          <h2 style="float: left;"><i class="fas fa-search"></i>検索機能</h2>
-          <%= image_tag "/assets/search-pc.png" %>
-          <p>検索フォームに場所や部位、ユーザー情報を入力することで、それに合う検索結果を探すことができます。</p>
-        </li>
-        <li style="background-color: #f3f3f3;">
-          <h2 style="float: left;"><i class="far fa-envelope"></i>トーク機能</h2>
-          <%= image_tag "/assets/talk-pc.png" %>
-          <p>気になるユーザーに直接トークすることで、よりマッチングしやすくなります。</p>        </li>
-        <li>
-          <h2 style="float: left;"><i class="fas fa-user-plus"></i>フォロー機能</h2>
-          <%= image_tag "/assets/follow-pc.png" %>
-          <p>気になるユーザーをフォローして、投稿をチェックすることができます。</p>
-        </li>
-      </ul>
+    
+    <div class="function" style="background-color: #f3f3f3;">
+      <div class="container">
+        <div class="row" style="display: flex;">
+          <div class="col-md-7">
+            <h2 class="pb-4"><i class="fas fa-globe"></i>募集機能</h2>
+            <p>一緒にトレーニングしたい場所と部位を入力し、より詳細な情報を入力することで募集することができます。</p>
+          </div>
+          <div class="col-md-5">
+            <%= image_tag "/assets/new-pc.png" %>
+          </div>
+        </div>
+      </div>
     </div>
+    
+    <div class="function">
+      <div class="container">
+        <div class="row" style="display: flex;">
+          <div class="col-md-7">
+            <h2 class="pb-4"><i class="fas fa-search"></i>検索機能</h2>
+            <p>検索フォームに場所や部位、ユーザー情報を入力することで、それに合う検索結果を探すことができます。</p>
+          </div>
+          <div class="col-md-5">
+            <%= image_tag "/assets/search-pc.png" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="function" style="background-color: #f3f3f3;">
+      <div class="container">
+        <div class="row" style="display: flex;">
+          <div class="col-md-7">
+            <h2 class="pb-4"><i class="far fa-envelope"></i>トーク機能</h2>
+            <p>気になるユーザーに直接トークすることで、よりマッチングしやすくなります。</p>       
+          </div>
+          <div class="col-md-5">
+            <%= image_tag "/assets/talk-pc.png" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="function">
+      <div class="container">
+        <div class="row" style="display: flex;">
+          <div class="col-md-7">
+            <h2 class="pb-4"><i class="fas fa-user-plus"></i>フォロー機能</h2>
+            <p>気になるユーザーをフォローして、投稿をチェックすることができます。</p>
+          </div>
+          <div class="col-md-5">
+            <%= image_tag "/assets/follow-pc.png" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="last">
       <h2><i class="fas fa-check-circle" style="color: #4CAF50; margin-right: 10px;"></i>さあ、始めよう</h2>
       <p>登録に必要な時間は１分程度です。</p>
@@ -136,41 +169,74 @@
     <div class="Heading">
       <div class="Heading-list">
         <h1>フィットネスを、ブームから文化に。</h1>
-        <p>Trawithなら、最高のトレーニングパートナーを見つけることができます。<br>さっそく</p>
+        <p>Trawithなら、最高のトレーニングパートナーを<br>見つけることができます。<br>さっそく</p>
         <%= link_to "登録する", signup_path, class: "btn btn-lg btn-primary" %>
         <%= link_to "ログイン", login_path, class: "btn btn-lg btn-success" %>
       </div>
     </div>
     <div class="about">
-      <h1>Trawithとは</h1>
+      <h1><i class="far fa-question-circle"></i>Trawithとは</h1>
       <p>トレーニングパートナーを<br>募集するサービスです。</p>
     </div>
-    <div class="function">
-      <h1>Trawithでできること</h1>
-      <ul class="function-list">
-        <li style="background-color: #f3f3f3;">
-          <h2 style="float: left;"><i class="fas fa-globe"></i>募集機能</h2>
-          <%= image_tag "/assets/new-sp.png" %>
-          <p>一緒にトレーニングしたい場所と部位を入力し、より詳細な情報を入力することで募集することができます。</p>
-        </li>
-        <li>
-          <h2 style="float: left;"><i class="fas fa-search"></i>検索機能</h2>
-          <%= image_tag "/assets/search-sp.png" %>
-          <p>検索フォームに場所や部位、ユーザー情報を入力することで、それに合う検索結果を探すことができます。</p>
-        </li>
-        <li style="background-color: #f3f3f3;">
-          <h2 style="float: left;"><i class="far fa-envelope"></i>トーク機能</h2>
-          <%= image_tag "/assets/talk-sp.png" %>
-          <p>気になるユーザーに直接トークすることで、よりマッチングしやすくなります。</p>        </li>
-        <li>
-          <h2 style="float: left;"><i class="fas fa-user-plus"></i>フォロー機能</h2>
-          <%= image_tag "/assets/follow-sp.png" %>
-          <p>気になるユーザーをフォローして、投稿をチェックすることができます。</p>
-        </li>
-      </ul>
+    
+    <div class="function" style="background-color: #f3f3f3;">
+      <div class="container">
+        <div class="row" style="display: flex;">
+          <div class="col-md-7">
+            <h2 class="pb-4"><i class="fas fa-globe"></i>募集機能</h2>
+            <p>一緒にトレーニングしたい場所と部位を入力し、より詳細な情報を入力することで募集することができます。</p>
+          </div>
+          <div class="col-md-5">
+            <%= image_tag "/assets/new-sp.png" %>
+          </div>
+        </div>
+      </div>
     </div>
+    
+    <div class="function">
+      <div class="container">
+        <div class="row" style="display: flex;">
+          <div class="col-md-7">
+            <h2 class="pb-4"><i class="fas fa-search"></i>検索機能</h2>
+            <p>検索フォームに場所や部位、ユーザー情報を入力することで、それに合う検索結果を探すことができます。</p>
+          </div>
+          <div class="col-md-5">
+            <%= image_tag "/assets/search-sp.png" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="function" style="background-color: #f3f3f3;">
+      <div class="container">
+        <div class="row" style="display: flex;">
+          <div class="col-md-7">
+            <h2 class="pb-4"><i class="far fa-envelope"></i>トーク機能</h2>
+            <p>気になるユーザーに直接トークすることで、よりマッチングしやすくなります。</p>       
+          </div>
+          <div class="col-md-5">
+            <%= image_tag "/assets/talk-sp.png" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="function">
+      <div class="container">
+        <div class="row" style="display: flex;">
+          <div class="col-md-7">
+            <h2 class="pb-4"><i class="fas fa-user-plus"></i>フォロー機能</h2>
+            <p>気になるユーザーをフォローして、投稿をチェックすることができます。</p>
+          </div>
+          <div class="col-md-5">
+            <%= image_tag "/assets/follow-sp.png" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="last">
-      <h2><i class="fas fa-check-circle" style="color: #4CAF50; margin-right: 10px;"></i>さあ、始めよう</h2>
+      <h2><i class="fas fa-check-circle" style="color: #4CAF50;"></i>さあ、始めよう</h2>
       <p>登録に必要な時間は１分程度です。</p>
       <%= link_to "登録する", signup_path, class: "btn btn-lg btn-primary" %>
       <%= link_to "ログイン", login_path, class: "btn btn-lg btn-success" %>
