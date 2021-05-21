@@ -6,7 +6,23 @@ class MessagesController < ApplicationController
       @message = Message.create(message_params)
       @message.image.attach(params[:message][:image])
       ActionCable.server.broadcast 'room_channel', message: @message.template
+      @room = @message.room
       if @message.save
+        @roommembernotme=Entry.where(room_id: @room.id).where.not(user_id: current_user.id)
+        @theid=@roommembernotme.find_by(room_id: @room.id)
+        notification = current_user.active_notifications.create(
+            message_id: @message.id,
+            visited_id: @theid.user_id,
+            visitor_id: current_user.id,
+            action: 'dm'
+        )
+        # 自分の投稿に対するコメントの場合は、通知済みとする
+        if notification.visitor_id == notification.visited_id
+            notification.checked = true
+        end
+        notification.save if notification.valid?
+        # ここまでを追加
+
         @message = Message.new
         gets_entries_all_messages
       end

@@ -29,6 +29,7 @@
     <nav class="sp-nav">
       <ul>
         <% if logged_in? %>
+          <li><%= link_to "notification", notifications_index_path %></li>
           <li><%= link_to "Profile", current_user %></li>
           <li><%= link_to "Contact", new_inquiry_path %></li>
           <li><%= link_to "Log out", logout_path, method: :delete %></li>

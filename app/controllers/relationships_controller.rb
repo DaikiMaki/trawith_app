@@ -4,6 +4,13 @@ class RelationshipsController < ApplicationController
   def create
     @user = User.find(params[:followed_id])
     current_user.follow(@user)
+    notification = current_user.active_notifications.create(
+      visitor_id: current_user.id,
+      visited_id: @user.id,
+      action: 'follow'
+    )
+    notification.save if notification.valid?
+
     respond_to do |format|
       format.html { redirect_to @user }
       format.js

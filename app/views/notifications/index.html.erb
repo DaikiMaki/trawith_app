@@ -1,0 +1,12 @@
+<% if @notifications.exists? %>
+  <% @notifications.each do |notification| %>
+    <% user = User.find_by(id: notification.visitor_id) %>
+    <% if notification.action == "dm" %>
+      <%= user.name %>さんからメッセージが届いています
+    <% else %>
+      <%= user.name %>さんがあなたをフォローしました
+    <% end %>
+  <% end %>
+<% else %>
+    <p>通知はございません</p>
+<% end %>
