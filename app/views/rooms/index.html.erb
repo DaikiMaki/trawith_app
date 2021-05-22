@@ -21,7 +21,7 @@
                 </span>
                 <span class="message">
                   <% if Message.find_by(id: e.room.message_ids.last) %>
-                    <%= Message.find_by(id: e.room.message_ids.last).message.truncate(38, omission: "...") %>
+                    <%= Message.find_by(id: e.room.message_ids.last).message.truncate(20, omission: "...") %>
                   <% else %>
                     トークを始めましょう！
                   <% end %>
