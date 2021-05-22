@@ -544,10 +544,65 @@ span.image {
   margin-top: -26px;
 }
 
+/* notification */
+.n-circle {
+  position: absolute;
+  padding-left: 1.5rem;
+  padding-top: 0rem;
+  color: #efa04c;
+}
+
+.notifications-sp {
+  display: none;
+  .pagination {
+    display: none;
+  }
+}
+.notifications {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .room-path, .followers-path, .message {
+    display: block;
+    a {
+      color: black;
+      opacity: 0.6;
+    }
+    a:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+  .followers-path {
+    margin: 10px 0;
+    .user {
+      color: black;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    margin-right: 10px;
+  }
+}
+
 /* レスポンシブ */
 
 @media screen and (max-width: 1024px) {
- .col-md-6 {
+  .col-md-offset-4 {
+    margin: 0 auto;
+  }
+  .col-md-6 {
     margin: 0;
     width: 100%;
   }
@@ -872,7 +927,30 @@ span.image {
   .user-edit-icon {
     line-height: 120px;
   }
-  
+  .notifications-pc {
+    display: none;
+  }
+  .notifications-sp {
+    display: block;
+    .notifications {
+      .timestamp {
+        margin-left: 110px;
+      }
+      .gravatar {
+        margin-top: 25px;
+      }
+      .followers-path {
+        margin: 25px 0;
+      }
+    }
+  }
+  .n-circle {
+  position: absolute;
+  margin-left: -35px;
+  padding-top: 15px;
+  color: #efa04c;
+}
+
 }
 
 

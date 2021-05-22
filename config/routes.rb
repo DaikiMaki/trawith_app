@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   delete '/logout', to:'sessions#destroy'
   get '/micropost_search', to:'microposts#search'
   get '/user_search', to:'users#search'
-  get 'notifications/index'
 
   
   resources :users do
@@ -28,4 +27,5 @@ Rails.application.routes.draw do
   resources :messages,            only: [:create]
   resources :rooms,               only: [:index, :create, :show, :destroy]
   resources :inquiries,           only: [:new, :create]
+  resources :notifications,       only: [:index]
 end

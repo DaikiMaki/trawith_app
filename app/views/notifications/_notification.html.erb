@@ -1,0 +1,47 @@
+<% user = User.find_by(id: notification.visitor_id) %>
+<% if notification.action == "dm" %>
+  <% message = notification.message %>
+  <% room = Room.find_by(id: message.room_id) %>
+  <li>
+    <%= link_to user do %>
+      <% if user.image? %>
+        <%= image_tag user.image.thumb.url, class: "gravatar", size: "50x50" %>
+      <% else %>
+        <%= image_tag "/assets/default.png", class: "gravatar", size: '50x50' %>
+      <% end %>
+    <% end %>
+    <%= link_to room_path(room) do %>
+      <div class="room-path">
+        <span class="user">
+          <%= user.name %>さんからメッセージが届いています  
+        </span>
+        <span class="message">
+          <%= message.message.truncate(20, omission: "...") %>
+        </span>
+        <span class="timestamp">
+          <%= notification.created_at.strftime("%Y-%m-%d %H:%M") %>
+        </span>
+      </div>
+    <% end %>
+  </li>
+<% else %>
+  <li>
+    <%= link_to user do %>
+      <% if user.image? %>
+        <%= image_tag user.image.thumb.url, class: "gravatar", size: "50x50" %>
+      <% else %>
+        <%= image_tag "/assets/default.png", class: "gravatar", size: '50x50' %>
+      <% end %>
+    <% end %>
+    <%= link_to followers_user_path(current_user) do %>
+      <div class="followers-path">
+        <span class="user">
+          <%= user.name %>さんがあなたをフォローしました
+        </span>
+        <span class="timestamp">
+          <%= notification.created_at.strftime("%Y-%m-%d %H:%M") %>
+        </span>
+      </div>
+    <% end %>
+  </li>
+<% end %>

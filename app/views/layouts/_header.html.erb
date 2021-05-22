@@ -6,7 +6,6 @@
         <% if logged_in? %>
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Talk", rooms_path %></li>
-          <li><%= link_to "Users", users_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
@@ -20,6 +19,16 @@
               </li>
             </ul>
           </li>
+          <li>
+            <%= link_to notifications_path do %>
+              <% if unchecked_notifications.any? %>
+                <i class="fas fa-bell fa-lg fa-stack-2x" style="font-size: 1.5em;"></i>
+                <i class="fas fa-circle n-circle fa-stack-1x"></i>
+              <% else %>
+                <i class="fas fa-bell fa-lg" style="font-size: 1.5em;"></i>
+              <% end %>
+            <% end %>
+          </li>
           
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
@@ -29,7 +38,6 @@
     <nav class="sp-nav">
       <ul>
         <% if logged_in? %>
-          <li><%= link_to "notification", notifications_index_path %></li>
           <li><%= link_to "Profile", current_user %></li>
           <li><%= link_to "Contact", new_inquiry_path %></li>
           <li><%= link_to "Log out", logout_path, method: :delete %></li>

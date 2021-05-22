@@ -16,12 +16,10 @@ class MessagesController < ApplicationController
             visitor_id: current_user.id,
             action: 'dm'
         )
-        # 自分の投稿に対するコメントの場合は、通知済みとする
         if notification.visitor_id == notification.visited_id
             notification.checked = true
         end
         notification.save if notification.valid?
-        # ここまでを追加
 
         @message = Message.new
         gets_entries_all_messages
