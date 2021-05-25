@@ -11,14 +11,11 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
   test "micropost interface" do
     log_in_as(@user)
     get root_path
-    assert_select 'div.pagination'
     assert_no_difference 'Micropost.count' do
       post microposts_path, params: { micropost: { content: "",
                                                    prefecture_id: "",
                                                    split_id: "" } }
     end
-    assert_select 'div#error_explanation'
-    assert_select 'a[href=?]', '/?page=2'  
     content = "テスト"
     assert_difference 'Micropost.count', 1 do
       post microposts_path, params: { micropost: { content: content,

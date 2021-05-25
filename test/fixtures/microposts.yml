@@ -1,20 +1,20 @@
 orange:
-  content: "I just ate an orange!"
+  content: "micropost test orange"
   created_at: <%= 10.minutes.ago %>
   user: michael
 
 tau_manifesto:
-  content: "Check out the @tauday site by @mhartl: https://tauday.com"
+  content: "micropost test tau_manifesto"
   created_at: <%= 3.years.ago %>
   user: michael
 
 cat_video:
-  content: "Sad cats are sad: https://youtu.be/PKffm2uI4dk"
+  content: "micropost test cat_video"
   created_at: <%= 2.hours.ago %>
   user: michael
 
 most_recent:
-  content: "Writing a short test"
+  content: "micropost test most_recent"
   created_at: <%= Time.zone.now %>
   user: michael
 
@@ -26,21 +26,21 @@ micropost_<%= n %>:
 <% end %>
 
 ants:
-  content: "Oh, is that what you want? Because that's how you get ants!"
+  content: "micropost test ants"
   created_at: <%= 2.years.ago %>
   user: archer
 
 zone:
-  content: "Danger zone!"
+  content: "micropost test zone"
   created_at: <%= 3.days.ago %>
   user: archer
 
 tone:
-  content: "I'm sorry. Your words made sense, but your sarcastic tone did not."
+  content: "micropost test tone"
   created_at: <%= 10.minutes.ago %>
   user: lana
 
 van:
-  content: "Dude, this van's, like, rolling probable cause."
+  content: "maicropost test van"
   created_at: <%= 4.hours.ago %>
   user: lana

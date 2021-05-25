@@ -1,0 +1,19 @@
+one:
+  user_id: 1
+  room_id: 1
+  message: "message test one"
+
+two:
+  user_id: 2
+  room_id: 1
+  message: "message test two"
+
+three:
+  user_id: 1
+  room_id: 2
+  message: "message test three"
+
+four:
+  user_id: 3
+  room_id: 2
+  message: "message test four"
