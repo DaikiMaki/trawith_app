@@ -23,7 +23,28 @@
 
 * 筋トレを趣味としている方との出会いの場を作る
 
-# 使用方法
+# 実装した機能についてのGIFと説明
+
+  新規登録
+  ![新規登録](https://user-images.githubusercontent.com/75789463/119630349-d4fa5e00-be49-11eb-8498-330fb1449d37.gif)
+  メール認証
+  ![新規登録メール認証](https://user-images.githubusercontent.com/75789463/119631885-45ee4580-be4b-11eb-9831-763b15ed88c5.gif)
+  パスワード再設定
+  ![パスワード再設定](https://user-images.githubusercontent.com/75789463/119636567-b9925180-be4f-11eb-9466-10ccf6d6929f.gif)
+  メールが送られてくる
+  ![パスワード再設定 メールgif](https://user-images.githubusercontent.com/75789463/119636701-d9c21080-be4f-11eb-93c0-5514be1f4cb4.gif)
+  新規投稿
+  ![新規投稿](https://user-images.githubusercontent.com/75789463/119634692-f3faef00-be4d-11eb-9c49-b2e7fc3bfbb4.gif)
+  トーク
+  ![トーク](https://user-images.githubusercontent.com/75789463/119637697-e4c97080-be50-11eb-8f49-e38d5b91874c.gif)
+  フォロー
+  ![フォロー](https://user-images.githubusercontent.com/75789463/119638368-894bb280-be51-11eb-9ad5-e46f568d6143.gif)
+  通知
+  ![通知](https://user-images.githubusercontent.com/75789463/119639335-79809e00-be52-11eb-90ad-e73142f9224a.gif)
+  検索
+  ![検索](https://user-images.githubusercontent.com/75789463/119640194-52769c00-be53-11eb-828b-ace9c2f896f3.gif)
+  無限スクロール
+  ![無限スクロール](https://user-images.githubusercontent.com/75789463/119653435-48a86500-be62-11eb-9872-6c8a0a45eb8c.gif)
 
 
 
