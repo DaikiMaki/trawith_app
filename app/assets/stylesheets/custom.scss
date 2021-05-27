@@ -12,6 +12,9 @@ $gray-medium-light: #eaeaea;
 }
 
 /* universal */
+.row {
+  min-height: 30vh;
+}
 
 body {
   padding-top: 60px;
@@ -404,7 +407,7 @@ span.image {
   }
   h4 {
     position: absolute;
-    top: 20vh;
+    top: 15vh;
     left: 50%;
     transform: translate(-50%, -50%);
   }
