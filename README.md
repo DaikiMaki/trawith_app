@@ -1,6 +1,6 @@
 # TRAWITH
 
-トレーニングパートナーを募集するサービスになります。  
+トレーニングパートナーを募集するサービスです。  
 写真やトレーニングしたい場所、部位などを入力して募集をかけることができます。  
 レスポンシブに対応しているので、PCだけでなく、スマートフォンやタブレットからもストレスなく利用することができます。　
 
@@ -25,26 +25,58 @@
 
 # 実装した機能についてのGIFと説明
 
-  新規登録  
-  ![新規登録](https://user-images.githubusercontent.com/75789463/119630349-d4fa5e00-be49-11eb-8498-330fb1449d37.gif)  
-  メール認証  
-  ![新規登録メール認証](https://user-images.githubusercontent.com/75789463/119631885-45ee4580-be4b-11eb-9831-763b15ed88c5.gif)  
-  パスワード再設定  
-  ![パスワード再設定](https://user-images.githubusercontent.com/75789463/119636567-b9925180-be4f-11eb-9466-10ccf6d6929f.gif)  
-  メールが送られてくる  
-  ![パスワード再設定 メールgif](https://user-images.githubusercontent.com/75789463/119636701-d9c21080-be4f-11eb-93c0-5514be1f4cb4.gif)  
-  新規投稿  
-  ![新規投稿](https://user-images.githubusercontent.com/75789463/119634692-f3faef00-be4d-11eb-9c49-b2e7fc3bfbb4.gif)  
-  トーク  
-  ![トーク](https://user-images.githubusercontent.com/75789463/119637697-e4c97080-be50-11eb-8f49-e38d5b91874c.gif)  
-  フォロー  
-  ![フォロー](https://user-images.githubusercontent.com/75789463/119638368-894bb280-be51-11eb-9ad5-e46f568d6143.gif)  
-  通知  
-  ![通知](https://user-images.githubusercontent.com/75789463/119639335-79809e00-be52-11eb-90ad-e73142f9224a.gif)  
-  検索  
-  ![検索](https://user-images.githubusercontent.com/75789463/119640194-52769c00-be53-11eb-828b-ace9c2f896f3.gif)  
-  無限スクロール  
-  ![無限スクロール](https://user-images.githubusercontent.com/75789463/119653435-48a86500-be62-11eb-9872-6c8a0a45eb8c.gif)  
+##  新規登録  
+
+![新規登録](https://user-images.githubusercontent.com/75789463/119630349-d4fa5e00-be49-11eb-8498-330fb1449d37.gif)  
+
+## メール認証(ActionMailerを用いて)  
+
+新規登録した際に登録したメールアドレスに認証メールが届きます。  
+メールに記載されているリンクをクリックすることでアカウントを認証し、有効にすることができます。  
+![新規登録メール認証](https://user-images.githubusercontent.com/75789463/119631885-45ee4580-be4b-11eb-9831-763b15ed88c5.gif)  
+
+## パスワード再設定  
+
+新規登録した際に登録したメールアドレスを入力します。  
+![パスワード再設定](https://user-images.githubusercontent.com/75789463/119636567-b9925180-be4f-11eb-9466-10ccf6d6929f.gif)  
+メールが送られてきます。(ActionMailerを用いて)  
+送られてきたメールに記載されているリンクをクリックすることで、パスワードを変更することができます。  
+![パスワード再設定 メールgif](https://user-images.githubusercontent.com/75789463/119636701-d9c21080-be4f-11eb-93c0-5514be1f4cb4.gif)  
+
+## 新規投稿  
+
+一緒にトレーニングしたい場所、部位を選択し、より詳細な情報をフォームに入力することで、投稿をすることができます。  
+![新規投稿](https://user-images.githubusercontent.com/75789463/119634692-f3faef00-be4d-11eb-9c49-b2e7fc3bfbb4.gif)  
+
+## トーク(ActionCableを用いて)  
+
+アカウント情報のトークを始めるをクリックすることで、トークすることができます。  
+![トーク](https://user-images.githubusercontent.com/75789463/119637697-e4c97080-be50-11eb-8f49-e38d5b91874c.gif)  
+
+## フォロー(Ajaxを用いて)  
+
+アカウント情報のアイコンをクリックすることでフォロー、フォロー解除することができます。
+![フォロー](https://user-images.githubusercontent.com/75789463/119638368-894bb280-be51-11eb-9ad5-e46f568d6143.gif)  
+
+## 通知  
+
+フォローされた時とメッセージが送られてきた時にベルマークにオレンジ色のマークが表示されます。　
+![通知](https://user-images.githubusercontent.com/75789463/119639335-79809e00-be52-11eb-90ad-e73142f9224a.gif)  
+
+## 検索(ransackを用いて)  
+
+場所か部位を選択することで、それに合わせた投稿を取得することができます。　
+![検索](https://user-images.githubusercontent.com/75789463/119640194-52769c00-be53-11eb-828b-ace9c2f896f3.gif)  
+
+## ページネーション(kaminariを用いて)　
+
+投稿一覧などの一部のページで、ページネーションを取り入れています。　
+![ページネーション](https://user-images.githubusercontent.com/75789463/119756249-3f5cde00-bede-11eb-9de6-ba770d244191.gif)　
+
+## 無限スクロール（kaminariとjscrollを用いて)  
+
+レスポンシブデザインを意識し、タブレットとスマートフォンの時はページネーションされていた箇所を無限スクロールに変更しています。　
+![無限スクロール](https://user-images.githubusercontent.com/75789463/119653435-48a86500-be62-11eb-9872-6c8a0a45eb8c.gif)  
 
 
 
@@ -74,9 +106,9 @@
 * トーク機能(ActionCable)  
 * フォロー機能(Ajax)  
 * 通知機能  
+* 検索機能(ransack)  
 * ページネーション機能(kaminari)  
 * 無限スクロール機能(jscroll & kaminari)  
-* 検索機能(ransack)  
 
 # 使用技術
 
@@ -92,15 +124,3 @@
 # ER図
 
 <img width="845" alt="スクリーンショット 2021-05-26 12 03 05" src="https://user-images.githubusercontent.com/75789463/119596914-07409700-be1b-11eb-8dda-a5e465e748b7.png">
-
-
-# Author
-
-* 牧大貴
-* makidaiki9180@gmail.com
-
-# License
-
-ライセンスを明示する
-
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
