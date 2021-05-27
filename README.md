@@ -47,11 +47,12 @@
 送られてきたメールに記載されているリンクをクリックすることで、パスワードを変更することができます。  
 ![パスワード再設定 メールgif](https://user-images.githubusercontent.com/75789463/119636701-d9c21080-be4f-11eb-93c0-5514be1f4cb4.gif)  
 
-#### ログイン  
+### ログイン  
 
+登録した内容を入力します。
 ![ログイン](https://user-images.githubusercontent.com/75789463/119784819-8dd3a200-bf09-11eb-985b-da6c6cbd78e1.gif)  
 
-#### ログアウト  
+### ログアウト  
 
 ![ログアウト](https://user-images.githubusercontent.com/75789463/119784009-c0c96600-bf08-11eb-9210-7752d17bded4.gif)  
 
@@ -78,7 +79,7 @@
 
 ### 新規投稿  
 
-一緒にトレーニングしたい場所、部位を選択し、より詳細な情報をフォームに入力することで、投稿をすることができます。  
+一緒にトレーニングしたい場所、部位を選択し、より詳細な情報をフォームに入力することで、投稿することができます。  
 ![新規投稿](https://user-images.githubusercontent.com/75789463/119763124-e09d6180-bee9-11eb-97e5-449bd82ac34c.gif)  
 
 ### 投稿検索(ransackを用いて)  
@@ -93,6 +94,7 @@
 
 ### 投稿削除  
 
+自分が投稿したものを削除することができます。
 ![投稿削除](https://user-images.githubusercontent.com/75789463/119763486-97014680-beea-11eb-84b1-6e53e3652670.gif)  
 
 ## トーク(ActionCableを用いて)  
