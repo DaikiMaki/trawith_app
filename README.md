@@ -8,7 +8,7 @@
 
 # URL
 https://cherry-crisp-98435.herokuapp.com/  
-テスト用アカウント  
+新規登録もできますが、登録済みのアカウントも用意しておりますので、こちらも是非お使いください。  
   * メールアドレス：testuser@trawith.org  
   * パスワード： trawith-test  
 
