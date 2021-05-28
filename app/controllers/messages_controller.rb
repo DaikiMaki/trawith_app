@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :logged_in_user, only: :create
   before_action :set_room
 
   def create

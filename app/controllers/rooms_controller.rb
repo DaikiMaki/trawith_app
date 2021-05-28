@@ -47,9 +47,13 @@ class RoomsController < ApplicationController
   
   def destroy
     room = Room.find(params[:id])
-    room.destroy
-    flash[:success] = "トークルームが削除されました"
-    redirect_to rooms_path
+    if Entry.find_by(user_id: current_user.id, room_id: room.id)
+      room.destroy
+      flash[:success] = "トークルームが削除されました"
+      redirect_to rooms_path
+    else 
+      redirect_to root_url
+    end
   end
 
     private

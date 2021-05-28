@@ -1,4 +1,5 @@
 michael:
+  id: 1
   name: Michael Example
   email: michael@example.com
   introduction: hello
@@ -8,6 +9,7 @@ michael:
   activated_at: <%= Time.zone.now %>
 
 archer:
+  id: 2
   name: Sterling Archer
   email: duchess@example.go
   introduction: hello
@@ -16,6 +18,7 @@ archer:
   activated_at: <%= Time.zone.now %>
 
 lana:
+  id: 3
   name: Lana Kane
   email: hands@example.gov
   introduction: hello
@@ -24,6 +27,7 @@ lana:
   activated_at: <%= Time.zone.now %>
 
 malory:
+  id: 4
   name: Malory Archer
   email: boss@example.gov
   introduction: hello

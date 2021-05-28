@@ -27,4 +27,5 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     get users_path
     assert_select 'a', text: '削除', count: 0
   end
+  
 end
