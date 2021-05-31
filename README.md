@@ -111,6 +111,10 @@ https://cherry-crisp-98435.herokuapp.com/
 自分が投稿したものを削除することができます。
 ![投稿削除](https://user-images.githubusercontent.com/75789463/119763486-97014680-beea-11eb-84b1-6e53e3652670.gif)  
 
+### 画像投稿(ActiveStorage)
+
+![画像投稿　投稿](https://user-images.githubusercontent.com/75789463/120131998-7f84cf00-c204-11eb-8f09-823272246bbc.gif)  
+
 ## トーク(ActionCableを用いて)  
 
 相手のプロフィール欄にあるトークを始めるをクリックすることで、メッセージを送ることができます。  
@@ -119,6 +123,10 @@ https://cherry-crisp-98435.herokuapp.com/
 ### トークルーム削除  
 
 ![トークルーム削除](https://user-images.githubusercontent.com/75789463/119764518-83ef7600-beec-11eb-8483-ca2f846acab9.gif)  
+
+###　画像投稿(ActiveStorage)
+
+![画像投稿　トーク](https://user-images.githubusercontent.com/75789463/120132464-5b75bd80-c205-11eb-98bf-25affb3bf75a.gif)  
 
 ## 通知関連　
 
@@ -179,6 +187,7 @@ https://cherry-crisp-98435.herokuapp.com/
 * 投稿機能(CRUD)  
 * 検索機能(ransack)  
 * トーク機能(ActionCable)  
+* 画像投稿機能(ActiveStorage)  
 * 通知機能  
 * お問い合わせ機能
 * ページネーション機能(kaminari)  
@@ -193,6 +202,9 @@ https://cherry-crisp-98435.herokuapp.com/
 * Ruby on Rails 6.0.3  
 * Ubuntu
 * Heroku
+* AWS
+  * S3
+  * Cloud9
 
 # ER図
 
