@@ -180,19 +180,6 @@ https://cherry-crisp-98435.herokuapp.com/
 
   レスポンシブデザインを意識し、端末ごとにページネーションになっていたところを無限スクロールに変えたり、jQueryなどを用いてサイトを見やすくしたりして、UI/UXを整えました。
 
-# 機能一覧
-
-* ユーザー登録(CRUD)、ログイン機能 
-* フォロー機能(Ajax)  
-* 投稿機能(CRUD)  
-* 検索機能(ransack)  
-* トーク機能(ActionCable)  
-* 画像投稿機能(ActiveStorage)  
-* 通知機能  
-* お問い合わせ機能
-* ページネーション機能(kaminari)  
-* 無限スクロール機能(jscroll & kaminari)  
-
 # 使用技術
 
 * HTML/CSS
