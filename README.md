@@ -124,7 +124,7 @@ https://cherry-crisp-98435.herokuapp.com/
 
 ![トークルーム削除](https://user-images.githubusercontent.com/75789463/119764518-83ef7600-beec-11eb-8483-ca2f846acab9.gif)  
 
-###　画像投稿(ActiveStorage)
+### 画像投稿(ActiveStorage)
 
 ![画像投稿　トーク](https://user-images.githubusercontent.com/75789463/120132464-5b75bd80-c205-11eb-98bf-25affb3bf75a.gif)  
 
