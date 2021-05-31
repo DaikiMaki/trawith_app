@@ -21,7 +21,7 @@ ja:
       micropost:
         prefecture: 場所
         split: 部位
-        content: 投稿
+        content: 詳細な情報
         image: 画像
       inquiry: 
         message: 内容

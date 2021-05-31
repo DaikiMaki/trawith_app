@@ -10,7 +10,7 @@
     ※<%= f.collection_select :split_id, Split.all, :id, :name, include_blank: '部位を選択' %>
 
 
-    ※<%= f.text_area :content, placeholder: "より詳細な情報を入力..." %>
+    ※<%= f.text_area :content, placeholder: "詳細な情報を入力..." %>
   </div>
   <%= f.submit "投稿", class: "btn btn-primary", id: "micropost_button", data: {disable_with: '投稿中...'} %>
   <span class="image">

@@ -193,10 +193,6 @@ https://cherry-crisp-98435.herokuapp.com/
 * Ruby on Rails 6.0.3  
 * Ubuntu
 * Heroku
-* AWS
-  * VPC
-  * EC2
-  * S3
 
 # ER図
 
