@@ -625,10 +625,10 @@ span.image {
     width: 100%;
   }
   header {
-    height: 10vh;
+    height: 140px;
   }
   header #logo {
-    line-height: 10vh;
+    line-height: 140px;
     font-size: 50px;
     width: 25vw;
     padding: 0;
@@ -737,7 +737,7 @@ span.image {
     width: 95%;
   }
   .all-contents {
-    padding-top: 11vh;
+    padding-top: 150px;
     margin-bottom: 10vh;
   }
   .micropost_search, .user_search {
@@ -966,7 +966,7 @@ span.image {
 .btn-trigger {
   position: relative;
   width: 7%;
-  height: 10vh;
+  height: 140px;
   float: right;
   cursor: pointer;
   z-index: 1040;
@@ -988,20 +988,20 @@ span.image {
 }
 
 .btn-trigger span:nth-of-type(1) {
-  top: 38%;
+  top: 50px;
 }
 
 .btn-trigger span:nth-of-type(2) {
-  top: 50%;
+  top: 70px;
 }
 
 .btn-trigger span:nth-of-type(3) {
-  top: 62%;
+  top: 90px;
 }
 
 #btn01.active span:nth-of-type(1) {
-  -webkit-transform: translateY(17.2px) rotate(-45deg);
-  transform: translateY(17.2px) rotate(-45deg);
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(20px) rotate(-45deg);
 }
 
 #btn01.active span:nth-of-type(2) {
@@ -1009,8 +1009,8 @@ span.image {
 }
 
 #btn01.active span:nth-of-type(3) {
-  -webkit-transform: translateY(-17.2px) rotate(45deg);
-  transform: translateY(-17.2px) rotate(45deg);
+  -webkit-transform: translateY(-20px) rotate(45deg);
+  transform: translateY(-20px) rotate(45deg);
 }
 
 .sp-nav {
